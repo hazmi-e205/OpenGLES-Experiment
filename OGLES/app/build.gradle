@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "id.hazmi.ogles"
         minSdkVersion 14
@@ -26,6 +26,7 @@ android {
             path "CMakeLists.txt"
         }
     }
+    buildToolsVersion '28.0.2'
 }
 
 dependencies {
