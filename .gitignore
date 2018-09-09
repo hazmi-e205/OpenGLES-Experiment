@@ -6,3 +6,5 @@ OGLES/.idea/misc.xml
 OGLES/\.directory
 
 \.directory
+OGLES/build-*
+OGLES/qtproject/qtproject.pro.user
