@@ -1,6 +1,8 @@
 #include <jni.h>
-#include "../../../../Sources/Implement.h"
-#include "../../../../Sources/Speak.h"
+#include "Implement.h"
+#include "Speak.h"
+
+#define AndroidStudio
 
 extern "C"
 JNIEXPORT void JNICALL

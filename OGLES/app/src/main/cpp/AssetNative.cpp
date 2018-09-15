@@ -3,8 +3,8 @@
 //
 
 #include "AssetNative.h"
-#include "../../../../Sources/Implement.h"
-#include "../../../../Sources/Speak.h"
+#include "Implement.h"
+#include "Speak.h"
 
 static int asset_read(void* cookie, char* buf, int size) {
     return AAsset_read((AAsset*)cookie, buf, size);

@@ -2,10 +2,9 @@
 // Created by hazmi.arifin on 5/26/2018.
 //
 
+#include "PlatformDefine.h"
 #include "Mystic.h"
 #include <math.h>
-
-#define OS_ANDROID
 
 //Vector2
 GLfloat Vector2::Length()
@@ -24,7 +23,7 @@ Vector2 & Vector2::Normalize()
 
 Vector2 Vector2::operator + (const Vector2 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector2 temp;
 	temp.x = x + vector.x;
@@ -45,7 +44,7 @@ Vector2 & Vector2::operator += (const Vector2 & vector)
 
 Vector2 Vector2::operator - ()
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector2 temp;
 	temp.x = -x ;
@@ -59,7 +58,7 @@ Vector2 Vector2::operator - ()
 
 Vector2 Vector2::operator - (const Vector2 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector2 temp;
 	temp.x = x - vector.x ;
@@ -80,7 +79,7 @@ Vector2 & Vector2::operator -= (const Vector2 & vector)
 
 Vector2 Vector2::operator * (GLfloat k)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector2 temp;
 	temp.x = x * k ;
@@ -102,7 +101,7 @@ Vector2 & Vector2::operator *= (GLfloat k)
 Vector2 Vector2::operator / (GLfloat k)
 {
     GLfloat kInv = 1.0f / k;
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector2 temp;
 	temp.x = x * kInv ;
@@ -133,7 +132,7 @@ GLfloat Vector2::operator [] (unsigned int idx)
 
 Vector2 Vector2::Modulate(const Vector2 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector2 temp;
 	temp.x = x * vector.x ;
@@ -169,7 +168,7 @@ Vector3 & Vector3::Normalize()
 
 Vector3 Vector3::operator + (const Vector3 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector3 temp;
 	temp.x = x + vector.x;
@@ -192,7 +191,7 @@ Vector3 & Vector3::operator += (const Vector3 & vector)
 
 Vector3 Vector3::operator - ()
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector3 temp;
 	temp.x = -x;
@@ -207,7 +206,7 @@ Vector3 Vector3::operator - ()
 
 Vector3 Vector3::operator - (const Vector3 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector3 temp;
 	temp.x = x - vector.x;
@@ -230,7 +229,7 @@ Vector3 & Vector3::operator -= (const Vector3 & vector)
 
 Vector3 Vector3::operator * (GLfloat k)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector3 temp;
 	temp.x = x * k;
@@ -255,7 +254,7 @@ Vector3 & Vector3::operator *= (GLfloat k)
 Vector3 Vector3::operator / (GLfloat k)
 {
     GLfloat kInv = 1.0f / k;
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector3 temp;
 	temp.x = x * kInv;
@@ -288,7 +287,7 @@ GLfloat Vector3::operator [] (unsigned int idx)
 
 Vector3 Vector3::Modulate(const Vector3 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector3 temp;
 	temp.x = x * vector.x;
@@ -307,7 +306,7 @@ GLfloat Vector3::Dot(const Vector3 & vector)
 
 Vector3 Vector3::Cross(const Vector3 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector3 temp;
 	temp.x = y * vector.z -  z * vector.y;
@@ -339,7 +338,7 @@ Vector4 & Vector4::Normalize()
 
 Vector4 Vector4::operator + (const Vector4 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector4 temp;
 	temp.x = x + vector.x;
@@ -364,7 +363,7 @@ Vector4 & Vector4::operator += (const Vector4 & vector)
 
 Vector4 Vector4::operator - ()
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector4 temp;
 	temp.x = -x;
@@ -379,7 +378,7 @@ Vector4 Vector4::operator - ()
 
 Vector4 Vector4::operator - (const Vector4 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector4 temp;
 	temp.x = x - vector.x;
@@ -404,7 +403,7 @@ Vector4 & Vector4::operator -= (const Vector4 & vector)
 
 Vector4 Vector4::operator * (GLfloat k)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector4 temp;
 	temp.x = x * k;
@@ -430,7 +429,7 @@ Vector4 & Vector4::operator *= (GLfloat k)
 Vector4 Vector4::operator / (GLfloat k)
 {
     GLfloat kInv = 1.0f / k;
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector4 temp;
 	temp.x = x * kInv;
@@ -464,7 +463,7 @@ GLfloat Vector4::operator [] (unsigned int idx)
 
 Vector4 Vector4::Modulate(const Vector4 & vector)
 {
-#if defined(OS_ANDROID)
+#if defined(AndroidStudio)
     //change direct constructor return value by using temp variable
 	Vector4 temp;
 	temp.x = x * vector.x;

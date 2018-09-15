@@ -40,3 +40,8 @@ target_link_libraries( # Specifies the target library.
                        log
                        android
                        )
+
+include_directories ( # Here directory you need
+                      src/main/cpp/
+                      ../Sources/
+                    )
