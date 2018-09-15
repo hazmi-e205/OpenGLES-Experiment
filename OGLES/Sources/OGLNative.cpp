@@ -4,10 +4,13 @@
 
 #include "OGLNative.h"
 #include "Speak.h"
-#include "AssetNative.h"
-#include <jni.h>
 #include <stdio.h>
 #include <stdlib.h>
+
+#if defined (AndroidStudio)
+#include "AssetNative.h"
+#include <jni.h>
+#endif
 
 GLuint loadShader(GLenum shaderType, const char* pSource) {
     GLuint shader = glCreateShader(shaderType);
@@ -196,14 +199,17 @@ void LoadUncompressedImage( char* pDest, char * pSrc, TGA_HEADER * pHeader )
 
 char * LoadTGA( const char * szFileName, int * width, int * height, int * bpp )
 {
-    FILE* f = asset_fopen(szFileName,"r");
+    FILE* f;
+#if defined (AndroidStudio)
+    f = asset_fopen(szFileName,"r");
     if (f == NULL) {
         Problem("Load Internal: Model Texture (.tga) is not available on asset");
-        f = fopen(szFileName,"r");
-        if (f == NULL) {
-            Problem("Load External: Model Texture (.tga) is not available files directory");
-            return NULL;
-        }
+    }
+#endif
+    f = fopen(szFileName,"r");
+    if (f == NULL) {
+        Problem("Load External: Model Texture (.tga) is not available files directory");
+        return NULL;
     }
 
     TGA_HEADER header;

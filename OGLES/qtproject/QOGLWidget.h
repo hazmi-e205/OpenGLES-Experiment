@@ -4,13 +4,13 @@
 #include <QMainWindow>
 #include <QOpenGLWidget>
 
-class MainWindow : public QOpenGLWidget
+class QOGLWidget : public QOpenGLWidget
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    QOGLWidget(QWidget *parent = 0);
+    ~QOGLWidget();
 
 protected:
     void initializeGL();

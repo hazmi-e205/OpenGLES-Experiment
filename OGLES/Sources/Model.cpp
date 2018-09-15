@@ -7,7 +7,10 @@
 #include "OGLNative.h"
 #include "Speak.h"
 #include "Implement.h"
+
+#if defined (AndroidStudio)
 #include "AssetNative.h"
+#endif
 
 Model::Model()
 {
@@ -23,14 +26,17 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
     ShaderObj.Init(model_vs,model_fs);
     Say("NFG: %s", file_nfg);
     Speak("TGA: %s", file_tga);
-    FILE* pFile = asset_fopen(file_nfg,"r");
+    FILE* pFile;
+#if defined (AndroidStudio)
+    pFile = asset_fopen(file_nfg,"r");
     if (pFile == NULL) {
         Problem("Load Internal: Model Vertices (.nfg) is not available on asset");
-        pFile = fopen(file_nfg,"r");
-        if (pFile == NULL) {
-            Problem("Load External: Model Vertices (.nfg) is not available files directory");
-            return;
-        }
+    }
+#endif
+    pFile = fopen(file_nfg,"r");
+    if (pFile == NULL) {
+        Problem("Load External: Model Vertices (.nfg) is not available files directory");
+        return;
     }
 
     //read Verices number

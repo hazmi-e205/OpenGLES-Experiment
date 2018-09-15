@@ -6,8 +6,12 @@
 #include "Implement.h"
 #include "OGLRender.h"
 #include "Speak.h"
+#include "PlatformDefine.h"
 
+#if defined (AndroidStudio)
 AAssetManager* assetManagerPtr;
+#endif
+
 std::string dataDirApp;
 int w_screen, h_screen;
 
@@ -50,6 +54,7 @@ std::string getDataDir()
     return dataDirApp;
 }
 
+#if defined (AndroidStudio)
 void setAssetMgr (AAssetManager* assetPtr)
 {
     assetManagerPtr = assetPtr;
@@ -59,6 +64,7 @@ AAssetManager* getAssetMgr()
 {
     return assetManagerPtr;
 }
+#endif
 
 void readTestExternal(){
     //std::string amo = "/storage/emulated/0/Android/data/id.hazmi.ogles/files/test.txt";
@@ -78,6 +84,7 @@ void readTestExternal(){
     }
 }
 void readTestInternal(){
+#if defined (AndroidStudio)
     AAsset* testAsset = AAssetManager_open(getAssetMgr(), "test.txt", AASSET_MODE_STREAMING);
     if (testAsset != NULL){
         char dataread[100];
@@ -86,4 +93,5 @@ void readTestInternal(){
         AAsset_close(testAsset);
         //delete dataread;
     }
+#endif
 }

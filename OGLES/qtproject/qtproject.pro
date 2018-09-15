@@ -13,8 +13,27 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    ../Sources/Mystic.cpp
+    ../Sources/Mystic.cpp \
+    ../Sources/Implement.cpp \
+    ../Sources/Model.cpp \
+    ../Sources/OGLNative.cpp \
+    ../Sources/OGLRender.cpp \
+    ../Sources/OGLShader.cpp \
+    ../Sources/Speak.cpp \
+    ../Sources/Vertex.cpp \
+    QOGLWidget.cpp
 
-HEADERS  += mainwindow.h \
-    ../Sources/Mystic.h
+HEADERS  += \
+    ../Sources/Mystic.h \
+    ../Sources/Implement.h \
+    ../Sources/Model.h \
+    ../Sources/OGLNative.h \
+    ../Sources/OGLRender.h \
+    ../Sources/OGLShader.h \
+    ../Sources/Speak.h \
+    ../Sources/Vertex.h \
+    PlatformDefine.h \
+    QOGLWidget.h
+
+INCLUDEPATH += $$PWD
+INCLUDEPATH += $$PWD/../Sources
