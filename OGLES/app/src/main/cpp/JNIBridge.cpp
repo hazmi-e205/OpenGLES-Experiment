@@ -1,6 +1,6 @@
 #include <jni.h>
-#include "Implement.h"
-#include "Speak.h"
+#include "../../../../Sources/Implement.h"
+#include "../../../../Sources/Speak.h"
 
 extern "C"
 JNIEXPORT void JNICALL

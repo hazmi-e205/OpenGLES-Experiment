@@ -7,7 +7,7 @@
 #include "OGLNative.h"
 #include "Speak.h"
 #include "Implement.h"
-#include "AssetNative.h"
+#include "../app/src/main/cpp/AssetNative.h"
 
 Model::Model()
 {

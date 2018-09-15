@@ -4,7 +4,7 @@
 
 #include "OGLNative.h"
 #include "Speak.h"
-#include "AssetNative.h"
+#include "../app/src/main/cpp/AssetNative.h"
 #include <jni.h>
 #include <stdio.h>
 #include <stdlib.h>
