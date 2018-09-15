@@ -2,9 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QOpenGLWindow>
+#include <QOpenGLWidget>
 
-class MainWindow : public QOpenGLWindow
+class MainWindow : public QOpenGLWidget
 {
     Q_OBJECT
 
@@ -13,9 +13,9 @@ public:
     ~MainWindow();
 
 protected:
-    virtual void initOGL();
-    virtual void resizeOGL(int w, int h);
-    virtual void renderOGL();
+    void initializeGL();
+    void resizeGL(int w, int h);
+    void paintGL();
 
     void resizeEvent(QResizeEvent *event);
     void paintEvent(QPaintEvent *event);

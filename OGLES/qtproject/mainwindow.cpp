@@ -1,26 +1,26 @@
 #include "mainwindow.h"
+#include "../Sources/Mystic.h"
 
 MainWindow::MainWindow(QWidget *parent)
+    : QOpenGLWidget(parent)
 {
-    setSurfaceType(QWindow::OpenGLSurface);
 }
 
 MainWindow::~MainWindow()
 {
-
 }
 
-void MainWindow::initOGL()
+void MainWindow::initializeGL()
 {
-
+    glClearColor(1.0f,1.0f,1.0f,1.0f);
 }
 
-void MainWindow::resizeOGL(int w, int h)
+void MainWindow::resizeGL(int w, int h)
 {
-
+    glViewport(0, 0, w, h);
 }
 
-void MainWindow::renderOGL()
+void MainWindow::paintGL()
 {
 
 }
