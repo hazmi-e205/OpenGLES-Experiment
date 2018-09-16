@@ -13,7 +13,7 @@ void Speak(const char* format, ...)
     va_list vl;
     char SpeakBuffer [300];
     sprintf(SpeakBuffer, format, vl);
-    qDebug() << LOG_TAG << "::Speak==>" << SpeakBuffer;
+    qDebug() << LOG_TAG << "Speak ==>" << SpeakBuffer;
 }
 
 void Problem(const char* format, ...)
@@ -21,7 +21,7 @@ void Problem(const char* format, ...)
     va_list vl;
     char SpeakBuffer [300];
     sprintf(SpeakBuffer, format, vl);
-    qDebug() << LOG_TAG << "::Problem==>" << SpeakBuffer;
+    qDebug() << LOG_TAG << "Problem ==>" << SpeakBuffer;
 }
 
 void Say(const char* format, ...)
@@ -29,7 +29,7 @@ void Say(const char* format, ...)
     va_list vl;
     char SpeakBuffer [300];
     sprintf(SpeakBuffer, format, vl);
-    qDebug() << LOG_TAG << "::Say==>" << SpeakBuffer;
+    qDebug() << LOG_TAG << "Say ==>" << SpeakBuffer;
 }
 
 #endif

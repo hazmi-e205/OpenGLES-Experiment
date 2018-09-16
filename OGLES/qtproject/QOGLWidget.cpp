@@ -1,5 +1,5 @@
 #include "QOGLWidget.h"
-#include "Mystic.h"
+#include "Implement.h"
 
 QOGLWidget::QOGLWidget(QWidget *parent)
     : QOpenGLWidget(parent)
@@ -12,17 +12,18 @@ QOGLWidget::~QOGLWidget()
 
 void QOGLWidget::initializeGL()
 {
-    glClearColor(1.0f,1.0f,1.0f,1.0f);
+    setDataDir("../app/src/main/assets");
+    native_init();
+    native_gl_init(this->width(), this->height());
 }
 
 void QOGLWidget::resizeGL(int w, int h)
 {
-    glViewport(0, 0, w, h);
 }
 
 void QOGLWidget::paintGL()
 {
-
+    native_gl_draw();
 }
 
 void QOGLWidget::resizeEvent(QResizeEvent *event)
