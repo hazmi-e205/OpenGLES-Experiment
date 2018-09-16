@@ -44,7 +44,7 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
     vertices_of_model = new Vertex[m_noVertices];
 
     //file to RAM
-    int v_no = 0;
+    unsigned int v_no = 0;
     for (unsigned int vertNo = 0; vertNo < m_noVertices; vertNo++) {
         fscanf(pFile, "   %d. pos:[%f, %f, %f]; norm:[%f, %f, %f]; binorm:[%f, %f, %f]; tgt:[%f, %f, %f]; uv:[%f, %f];",
                &v_no,
@@ -62,7 +62,7 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
     //read indeces number
     fscanf(pFile, "\nNrIndices: %u\n", &m_noIndices);
     indexData = new GLuint[m_noIndices];
-    int i_no = 0, ind_no = -1;
+    unsigned int i_no = 0, ind_no = -1;
     for (unsigned int i_No = 0; i_No < (m_noIndices/3); i_No++) {
         fscanf(pFile, "%d.    %d,    %d,    %d\n",
                &i_no, &indexData[ind_no+1], &indexData[ind_no + 2], &indexData[ind_no + 3]);

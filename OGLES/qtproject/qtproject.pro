@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     ../Sources/OGLShader.cpp \
     ../Sources/Speak.cpp \
     ../Sources/Vertex.cpp \
-    QOGLWidget.cpp
+    QOGLWidget.cpp \
+    OGLAdapter.cpp
 
 HEADERS  += \
     ../Sources/Mystic.h \
@@ -33,7 +34,8 @@ HEADERS  += \
     ../Sources/Speak.h \
     ../Sources/Vertex.h \
     PlatformDefine.h \
-    QOGLWidget.h
+    QOGLWidget.h \
+    OGLAdapter.h
 
 INCLUDEPATH += $$PWD
 INCLUDEPATH += $$PWD/../Sources

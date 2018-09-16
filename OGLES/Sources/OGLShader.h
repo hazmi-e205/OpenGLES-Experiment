@@ -5,7 +5,15 @@
 #ifndef OGLES_OGLSHADER_H
 #define OGLES_OGLSHADER_H
 
+#include "PlatformDefine.h"
+
+#if defined (AndroidStudio)
 #include <GLES2/gl2.h>
+
+#elif defined (QtProject)
+#include "OGLAdapter.h"
+
+#endif
 
 class OGLShader {
 public:

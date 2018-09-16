@@ -2,13 +2,16 @@
 // Created by hazmi.arifin on 5/26/2018.
 //
 
-#include <GLES2/gl2.h>
 #include <string>
 #include "OGLNative.h"
 #include "OGLRender.h"
 #include "Speak.h"
 #include "Model.h"
 #include "Implement.h"
+
+#if defined (AndroidStudio)
+#include <GLES2/gl2.h>
+#endif
 
 Model women1, women2;
 std::string namaNfg1, namaTga1;
