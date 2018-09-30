@@ -43,7 +43,26 @@
 			<Add directory="../Libraries/glfw-3.2.1/lib/Linux64" />
 			<Add directory="../Libraries/glew-2.1.0/lib/Linux64" />
 		</Linker>
+		<Unit filename="../../Sources/Implement.cpp" />
+		<Unit filename="../../Sources/Implement.h" />
+		<Unit filename="../../Sources/Model.cpp" />
+		<Unit filename="../../Sources/Model.h" />
+		<Unit filename="../../Sources/Mystic.cpp" />
+		<Unit filename="../../Sources/Mystic.h" />
+		<Unit filename="../../Sources/OGLNative.cpp" />
+		<Unit filename="../../Sources/OGLNative.h" />
+		<Unit filename="../../Sources/OGLRender.cpp" />
+		<Unit filename="../../Sources/OGLRender.h" />
+		<Unit filename="../../Sources/OGLShader.cpp" />
+		<Unit filename="../../Sources/OGLShader.h" />
+		<Unit filename="../../Sources/Speak.cpp" />
+		<Unit filename="../../Sources/Speak.h" />
+		<Unit filename="../../Sources/Vertex.cpp" />
+		<Unit filename="../../Sources/Vertex.h" />
+		<Unit filename="OGLAdapter.h" />
+		<Unit filename="PlatformDefine.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="stdafx.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

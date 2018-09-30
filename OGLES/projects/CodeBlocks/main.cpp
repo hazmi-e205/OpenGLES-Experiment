@@ -1,26 +1,30 @@
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "GL/glew.h"
+#include "GLFW/glfw3.h"
+#include "Implement.h"
 
 int main(void)
 {
-    GLFWwindow* window;
+	GLFWwindow* window;
 
-    /* Initialize the library */
-    if (!glfwInit())
-        return -1;
+	/* Initialize the library */
+	if (!glfwInit())
+		return -1;
 
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
-    if (!window)
-    {
-        glfwTerminate();
-        return -1;
-    }
+	/* Create a windowed mode window and its OpenGL context */
+	window = glfwCreateWindow(width_screen, height_screen, "Hello World", NULL, NULL);
+	if (!window)
+	{
+		glfwTerminate();
+		return -1;
+	}
 
-    /* Make the window's context current */
-    glfwMakeContextCurrent(window);
+	/* Make the window's context current */
+	glfwMakeContextCurrent(window);
 
-    /* GLEW initialize */
+	/* GLEW initialize */
 	if (glewInit() != GLEW_OK)
 	{
 		glfwTerminate();
@@ -28,21 +32,23 @@ int main(void)
 	}
 
 	/* Native initialize */
-	//your init
+	setDataDir("../../../app/src/main/assets");
+	native_init();
+	native_gl_init(width_screen,height_screen);
 
-    /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
-    {
-        /* Render here */
-        glClear(GL_COLOR_BUFFER_BIT);
+	/* Loop until the user closes the window */
+	while (!glfwWindowShouldClose(window))
+	{
+		/* Render here */
+		native_gl_draw();
 
-        /* Swap front and back buffers */
-        glfwSwapBuffers(window);
+		/* Swap front and back buffers */
+		glfwSwapBuffers(window);
 
-        /* Poll for and process events */
-        glfwPollEvents();
-    }
+		/* Poll for and process events */
+		glfwPollEvents();
+	}
 
-    glfwTerminate();
-    return 0;
+	glfwTerminate();
+	return 0;
 }

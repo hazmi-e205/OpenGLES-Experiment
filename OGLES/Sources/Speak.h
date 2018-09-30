@@ -14,7 +14,7 @@
 #define  Problem(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
 #define  Say(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 
-#elif defined (VisualStudio)
+#elif defined (VisualStudio) || defined (CodeBlocks)
 
 void Speak(const char* format, ...);
 void Problem(const char* format, ...);

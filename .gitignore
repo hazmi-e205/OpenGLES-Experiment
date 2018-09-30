@@ -14,3 +14,5 @@ OGLES/projects/CodeBlocks/OGL-CodeBlocks\.layout
 
 OGLES/projects/CodeBlocks/bin/
 OGLES/projects/CodeBlocks/obj/
+
+*.depend

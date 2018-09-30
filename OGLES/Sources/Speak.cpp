@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "Speak.h"
 
-#if defined (VisualStudio)
+#if defined (VisualStudio) || defined (CodeBlocks)
 #include <stdio.h>
 #include <stdarg.h>
 const char* LOG_TAG = "HazmiOGL";

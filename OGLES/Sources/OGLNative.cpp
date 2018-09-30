@@ -5,8 +5,10 @@
 #include "stdafx.h"
 #include "OGLNative.h"
 #include "Speak.h"
+#include "Implement.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
 
 #if defined (AndroidStudio)
 #include "AssetNative.h"
@@ -15,6 +17,8 @@
 #endif
 
 GLuint loadShader(GLenum shaderType, const char* pSource) {
+    Say("Source:");
+    Say(pSource);
     GLuint shader = glCreateShader(shaderType);
     if (shader) {
         glShaderSource(shader, 1, &pSource, NULL);
