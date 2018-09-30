@@ -25,18 +25,20 @@ float scale1 = 0.4f;
 float scale2 = 0.4f;
 
 bool setupGraphics(int w, int h) {
-    //printGLString("Version", GL_VERSION);
-    //printGLString("Vendor", GL_VENDOR);
-    //printGLString("Renderer", GL_RENDERER);
-    //printGLString("Extensions", GL_EXTENSIONS);
+#if defined (AndroidStudio)
+    printGLString("Version", GL_VERSION);
+    printGLString("Vendor", GL_VENDOR);
+    printGLString("Renderer", GL_RENDERER);
+    printGLString("Extensions", GL_EXTENSIONS);
+#endif
 
     Speak("setupGraphics(%d, %d)", w, h);
     glViewport(0, 0, w, h);
     checkGlError("glViewport");
     glClearColor(1.0f,1.0f,1.0f,1.0f);
 
-    namaNfg1 = getDataDir() + "/Woman1.nfg";
-    namaTga1 = getDataDir() + "/Woman1.tga";
+    namaNfg1 = "Woman1.nfg";
+    namaTga1 = "Woman1.tga";
 
 	women1 = new Model();
     women1->InitModel(namaNfg1.c_str(), namaTga1.c_str());

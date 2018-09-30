@@ -10,6 +10,7 @@
 
 #if defined (AndroidStudio)
 #include "AssetNative.h"
+#include "Implement.h"
 #include <jni.h>
 #endif
 
@@ -207,10 +208,13 @@ char * LoadTGA( const char * szFileName, int * width, int * height, int * bpp )
         Problem("Load Internal: Model Texture (.tga) is not available on asset");
     }
 #endif
-    f = fopen(szFileName,"r");
     if (f == NULL) {
-        Problem("Load External: Model Texture (.tga) is not available files directory");
-        return NULL;
+        std::string tga_src = getDataDir() + "/" + szFileName;
+        f = fopen(tga_src.c_str(), "r");
+        if (f == NULL) {
+            Problem("Load External: Model Texture (.tga) is not available files directory");
+            return NULL;
+        }
     }
 
     TGA_HEADER header;

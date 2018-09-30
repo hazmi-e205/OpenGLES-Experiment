@@ -35,10 +35,13 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
         Problem("Load Internal: Model Vertices (.nfg) is not available on asset");
     }
 #endif
-    pFile = fopen(file_nfg,"r");
     if (pFile == NULL) {
-        Problem("Load External: Model Vertices (.nfg) is not available files directory");
-        return;
+        std::string nfg_src = getDataDir() + "/" + file_nfg;
+        pFile = fopen(nfg_src.c_str(), "r");
+        if (pFile == NULL) {
+            Problem("Load External: Model Vertices (.nfg) is not available files directory");
+            return;
+        }
     }
 
     //read Verices number
