@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vs2015", "vs2015\vs2015.vcxproj", "{8C204A34-7020-4D09-8595-3A7F64BEC3FB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGL-Experiment", "vs2015\vs2015.vcxproj", "{8C204A34-7020-4D09-8595-3A7F64BEC3FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
