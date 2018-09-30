@@ -17,8 +17,6 @@
 #endif
 
 GLuint loadShader(GLenum shaderType, const char* pSource) {
-    Say("Source:");
-    Say(pSource);
     GLuint shader = glCreateShader(shaderType);
     if (shader) {
         glShaderSource(shader, 1, &pSource, NULL);
