@@ -28,7 +28,7 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
     ShaderObj->Init(model_vs,model_fs);
     Say("NFG: %s", file_nfg);
     Speak("TGA: %s", file_tga);
-    FILE* pFile;
+    FILE* pFile = NULL;
 #if defined (AndroidStudio)
     pFile = asset_fopen(file_nfg,"r");
     if (pFile == NULL) {

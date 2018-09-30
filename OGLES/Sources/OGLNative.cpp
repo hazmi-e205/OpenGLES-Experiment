@@ -205,7 +205,7 @@ void LoadUncompressedImage( char* pDest, char * pSrc, TGA_HEADER * pHeader )
 
 char * LoadTGA( const char * szFileName, int * width, int * height, int * bpp )
 {
-    FILE* f;
+    FILE* f = NULL;
 #if defined (AndroidStudio)
     f = asset_fopen(szFileName,"r");
     if (f == NULL) {
