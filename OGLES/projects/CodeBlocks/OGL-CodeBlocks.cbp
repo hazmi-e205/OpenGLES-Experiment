@@ -31,7 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="../Libraries/glfw-3.2.1/include" />
+			<Add directory="../Libraries/glew-2.1.0/include" />
+			<Add directory="../../Sources" />
+			<Add directory="../CodeBlocks" />
 		</Compiler>
+		<Linker>
+			<Add library="GL" />
+			<Add library="../Libraries/glfw-3.2.1/lib/Linux64/libglfw.so" />
+			<Add library="../Libraries/glew-2.1.0/lib/Linux64/libGLEW.so" />
+			<Add directory="../Libraries/glfw-3.2.1/lib/Linux64" />
+			<Add directory="../Libraries/glew-2.1.0/lib/Linux64" />
+		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
