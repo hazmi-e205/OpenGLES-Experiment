@@ -2,6 +2,8 @@
 // Created by hazmi.arifin on 6/2/2018.
 //
 
+#include "stdafx.h"
+
 #include "OGLShader.h"
 #include "OGLNative.h"
 

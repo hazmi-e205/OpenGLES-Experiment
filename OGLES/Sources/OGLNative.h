@@ -10,7 +10,7 @@
 #if defined (AndroidStudio)
 #include <GLES2/gl2.h>
 
-#elif defined (QtProject)
+#elif defined (VisualStudio)
 #include "OGLAdapter.h"
 
 #endif

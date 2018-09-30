@@ -2,8 +2,9 @@
 //
 
 #include "stdafx.h"
-#include "GL\glew.h"
+#include "GL/glew.h"
 #include "GLFW/glfw3.h"
+#include "Implement.h"
 
 int main(void)
 {
@@ -14,7 +15,7 @@ int main(void)
 		return -1;
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+	window = glfwCreateWindow(width_screen, height_screen, "Hello World", NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();
@@ -32,13 +33,15 @@ int main(void)
 	}
 
 	/* Native initialize */
-	//setupGraphics(640, 480);
+	setDataDir("../../../app/src/main/assets");
+	native_init();
+	native_gl_init(width_screen,height_screen);
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window))
 	{
 		/* Render here */
-		//renderFrame();
+		native_gl_draw();
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(window);

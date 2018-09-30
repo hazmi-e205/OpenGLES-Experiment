@@ -9,6 +9,10 @@
 #include "OGLShader.h"
 
 class Model {
+public:
+	Model();
+	~Model();
+
 private:
     const char* model_vs = ""
             "attribute vec3 a_posL;\n"
@@ -42,13 +46,10 @@ private:
     Vertex *vertices_of_model;
     GLuint *indexData;
     int width_texture, height_texture, bpp_texture;
-    OGLShader ShaderObj;
+    OGLShader *ShaderObj;
 
 public:
-    Model();
-    ~Model();
-
-    void InitModel(const char * file_nfg, const char * file_tga);
+	void InitModel(const char * file_nfg, const char * file_tga);
     void drawModel();
     void scale(float scale_);
     void rotationX(float rotate);

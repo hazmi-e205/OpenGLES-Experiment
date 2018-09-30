@@ -3,3 +3,4 @@
 //
 
 #include "Vertex.h"
+#include "stdafx.h"

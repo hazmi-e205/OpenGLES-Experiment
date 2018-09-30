@@ -2,6 +2,7 @@
 // Created by hazmi.arifin on 5/26/2018.
 //
 
+#include "stdafx.h"
 #include "Mystic.h"
 #include <math.h>
 
@@ -28,7 +29,7 @@ Vector2 Vector2::operator + (const Vector2 & vector)
 	temp.x = x + vector.x;
 	temp.y = y + vector.y;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector2(x + vector.x, y + vector.y);
 #endif
 }
@@ -49,7 +50,7 @@ Vector2 Vector2::operator - ()
 	temp.x = -x ;
 	temp.y = -y;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector2(-x, -y);
 #endif
 
@@ -63,7 +64,7 @@ Vector2 Vector2::operator - (const Vector2 & vector)
 	temp.x = x - vector.x ;
 	temp.y = y - vector.y;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector2(x - vector.x, y - vector.y);
 #endif
 }
@@ -84,7 +85,7 @@ Vector2 Vector2::operator * (GLfloat k)
 	temp.x = x * k ;
 	temp.y = y * k;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector2(x * k, y * k);
 #endif
 }
@@ -106,7 +107,7 @@ Vector2 Vector2::operator / (GLfloat k)
 	temp.x = x * kInv ;
 	temp.y = y * kInv;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector2(x * kInv, y * kInv);
 #endif
 }
@@ -137,7 +138,7 @@ Vector2 Vector2::Modulate(const Vector2 & vector)
 	temp.x = x * vector.x ;
 	temp.y = y * vector.y;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector2(x * vector.x, y * vector.y);
 #endif
 
@@ -174,7 +175,7 @@ Vector3 Vector3::operator + (const Vector3 & vector)
 	temp.y = y + vector.y;
 	temp.z = z + vector.z;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector3(x + vector.x, y + vector.y, z + vector.z);
 #endif
 }
@@ -197,7 +198,7 @@ Vector3 Vector3::operator - ()
 	temp.y = -y;
 	temp.z = -z;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector3(-x, -y, -z);
 #endif
 
@@ -212,7 +213,7 @@ Vector3 Vector3::operator - (const Vector3 & vector)
 	temp.y = y - vector.y;
 	temp.z = z - vector.z;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector3(x - vector.x, y - vector.y, z - vector.z);
 #endif
 }
@@ -235,7 +236,7 @@ Vector3 Vector3::operator * (GLfloat k)
 	temp.y = y * k;
 	temp.z = z * k;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector3(x * k, y * k, z * k);
 #endif
 
@@ -260,7 +261,7 @@ Vector3 Vector3::operator / (GLfloat k)
 	temp.y = y * kInv;
 	temp.z = z * kInv;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector3(x * kInv, y * kInv, z * kInv);
 #endif
 }
@@ -293,7 +294,7 @@ Vector3 Vector3::Modulate(const Vector3 & vector)
 	temp.y = y * vector.y;
 	temp.z = z * vector.z;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector3(x * vector.x, y * vector.y, z * vector.z);
 #endif
 }
@@ -312,7 +313,7 @@ Vector3 Vector3::Cross(const Vector3 & vector)
 	temp.y = z * vector.x - x * vector.z;
 	temp.z = x * vector.y - y * vector.x;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector3(y * vector.z -  z * vector.y, z * vector.x - x * vector.z, x * vector.y - y * vector.x);
 #endif
 }
@@ -345,7 +346,7 @@ Vector4 Vector4::operator + (const Vector4 & vector)
 	temp.z = z + vector.z;
 	temp.w = w + vector.w;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector4(x + vector.x, y + vector.y, z + vector.z, w + vector.w);
 #endif
 }
@@ -370,7 +371,7 @@ Vector4 Vector4::operator - ()
 	temp.z = -z;
 	temp.w = -w;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector4(-x, -y, -z, -w);
 #endif
 }
@@ -385,7 +386,7 @@ Vector4 Vector4::operator - (const Vector4 & vector)
 	temp.z = z - vector.z;
 	temp.w = w - vector.w;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector4(x - vector.x, y - vector.y, z - vector.z, w - vector.w);
 #endif
 }
@@ -410,7 +411,7 @@ Vector4 Vector4::operator * (GLfloat k)
 	temp.z = z * k;
 	temp.w = w * k;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector4(x * k, y * k, z * k, w * k);
 #endif
 }
@@ -436,7 +437,7 @@ Vector4 Vector4::operator / (GLfloat k)
 	temp.z = z * kInv;
 	temp.w = w * kInv;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector4(x * kInv, y * kInv, z * kInv, w * kInv);
 #endif
 }
@@ -470,7 +471,7 @@ Vector4 Vector4::Modulate(const Vector4 & vector)
 	temp.z = z * vector.z;
 	temp.w = w * vector.w;
 	return temp;
-#elif defined(QtProject)
+#elif defined(VisualStudio)
     return Vector4(x * vector.x, y * vector.y, z * vector.z, w * vector.w);
 #endif
 

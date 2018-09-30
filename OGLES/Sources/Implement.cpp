@@ -2,6 +2,7 @@
 // Created by hazmi.arifin on 5/2/2018.
 //
 
+#include "stdafx.h"
 #include <stdio.h>
 #include "Implement.h"
 #include "OGLRender.h"

@@ -2,6 +2,7 @@
 // Created by hazmi.arifin on 5/14/2018.
 //
 
+#include "stdafx.h"
 #include "Model.h"
 #include <stdio.h>
 #include "OGLNative.h"
@@ -23,7 +24,8 @@ Model::~Model()
 
 void Model::InitModel(const char * file_nfg, const char * file_tga)
 {
-    ShaderObj.Init(model_vs,model_fs);
+	ShaderObj = new OGLShader();
+    ShaderObj->Init(model_vs,model_fs);
     Say("NFG: %s", file_nfg);
     Speak("TGA: %s", file_tga);
     FILE* pFile;
@@ -109,15 +111,15 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
 }
 
 void Model::drawModel() {
-    glUseProgram(ShaderObj.GetProgram());
+    glUseProgram(ShaderObj->GetProgram());
     glBindBuffer(GL_ARRAY_BUFFER, m_hVertexBuffer);
-    if (ShaderObj.GetAttributes().position != -1)
+    if (ShaderObj->GetAttributes().position != -1)
     {
-        glEnableVertexAttribArray(ShaderObj.GetAttributes().position);
-        glVertexAttribPointer(ShaderObj.GetAttributes().position, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (char*)0);
+        glEnableVertexAttribArray(ShaderObj->GetAttributes().position);
+        glVertexAttribPointer(ShaderObj->GetAttributes().position, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (char*)0);
     }
 
-    if (ShaderObj.GetUniforms().mvp != -1)
+    if (ShaderObj->GetUniforms().mvp != -1)
     {
         //source: http://www.learnopengles.com/understanding-opengls-matrices/
         Matrix baru;
@@ -125,18 +127,18 @@ void Model::drawModel() {
         model_mvp = (modelScale * (modelRotationZ*modelRotationX*modelRotationY) * modelTranslation * baru);
 
 
-        glUniformMatrix4fv(ShaderObj.GetUniforms().mvp, 1, GL_FALSE, *model_mvp.m);
+        glUniformMatrix4fv(ShaderObj->GetUniforms().mvp, 1, GL_FALSE, *model_mvp.m);
     }
 
-    if (ShaderObj.GetAttributes().uv != -1)
+    if (ShaderObj->GetAttributes().uv != -1)
     {
-        glEnableVertexAttribArray(ShaderObj.GetAttributes().uv);
-        glVertexAttribPointer(ShaderObj.GetAttributes().uv, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (char*)0 + sizeof(Vertex::position));
+        glEnableVertexAttribArray(ShaderObj->GetAttributes().uv);
+        glVertexAttribPointer(ShaderObj->GetAttributes().uv, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (char*)0 + sizeof(Vertex::position));
     }
 
     glBindTexture(GL_TEXTURE_2D, textureID);
-    if (ShaderObj.GetUniforms().texture != -1) {
-        glUniform1i(ShaderObj.GetProgram(), ShaderObj.GetUniforms().texture);
+    if (ShaderObj->GetUniforms().texture != -1) {
+        glUniform1i(ShaderObj->GetProgram(), ShaderObj->GetUniforms().texture);
     }
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_hIndexBuffer);

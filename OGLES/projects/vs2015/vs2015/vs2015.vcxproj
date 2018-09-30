@@ -87,9 +87,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\Libraries\glew-2.1.0\include;$(SolutionDir)\..\Libraries\glfw-3.2.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\Libraries\glew-2.1.0\include;$(SolutionDir)\..\Libraries\glfw-3.2.1\include;$(SolutionDir)\vs2015;$(SolutionDir)\..\..\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -99,7 +99,12 @@
       <PreventDllBinding>false</PreventDllBinding>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy $(SolutionDir)\..\Libraries\glew-2.1.0\bin\Win32\glew32.dll $(OutDir)</Command>
+      <Command>@echo off
+if exist $(OutDir)\glew32.dll  (
+    echo file exists
+) else (
+    xcopy $(SolutionDir)\..\Libraries\glew-2.1.0\bin\Win32\glew32.dll $(OutDir)
+)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>copy dll files</Message>
@@ -156,10 +161,28 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Sources\Implement.h" />
+    <ClInclude Include="..\..\..\Sources\Model.h" />
+    <ClInclude Include="..\..\..\Sources\Mystic.h" />
+    <ClInclude Include="..\..\..\Sources\OGLNative.h" />
+    <ClInclude Include="..\..\..\Sources\OGLRender.h" />
+    <ClInclude Include="..\..\..\Sources\OGLShader.h" />
+    <ClInclude Include="..\..\..\Sources\Speak.h" />
+    <ClInclude Include="..\..\..\Sources\Vertex.h" />
+    <ClInclude Include="OGLAdapter.h" />
+    <ClInclude Include="PlatformDefine.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Sources\Implement.cpp" />
+    <ClCompile Include="..\..\..\Sources\Model.cpp" />
+    <ClCompile Include="..\..\..\Sources\Mystic.cpp" />
+    <ClCompile Include="..\..\..\Sources\OGLNative.cpp" />
+    <ClCompile Include="..\..\..\Sources\OGLRender.cpp" />
+    <ClCompile Include="..\..\..\Sources\OGLShader.cpp" />
+    <ClCompile Include="..\..\..\Sources\Speak.cpp" />
+    <ClCompile Include="..\..\..\Sources\Vertex.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
