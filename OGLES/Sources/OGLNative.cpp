@@ -12,7 +12,6 @@
 
 #if defined (AndroidStudio)
 #include "AssetNative.h"
-#include "Implement.h"
 #include <jni.h>
 #endif
 

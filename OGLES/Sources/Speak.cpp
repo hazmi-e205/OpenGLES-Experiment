@@ -14,7 +14,7 @@ void Speak(const char* format, ...)
 {
     va_list vl;
 	va_start(vl, format);
-	printf(LOG_TAG);
+	printf("%s", LOG_TAG);
 	printf(" :: Speak ==> ");
 	printf(format, vl);
 	printf("\n");
@@ -24,7 +24,7 @@ void Problem(const char* format, ...)
 {
 	va_list vl;
 	va_start(vl, format);
-	printf(LOG_TAG);
+	printf("%s", LOG_TAG);
 	printf(" :: Problem ==> ");
 	printf(format, vl);
 	printf("\n");
@@ -34,7 +34,7 @@ void Say(const char* format, ...)
 {
 	va_list vl;
 	va_start(vl, format);
-	printf(LOG_TAG);
+	printf("%s", LOG_TAG);
 	printf(" :: Say ==> ");
 	printf(format, vl);
 	printf("\n");
