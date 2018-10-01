@@ -17,8 +17,8 @@
 #endif
 
 Model *women1, *women2;
-std::string namaNfg1, namaTga1;
-std::string namaNfg2, namaTga2;
+const char *namaNfg1, *namaTga1;
+const char *namaNfg2, *namaTga2;
 Vector3 transLt1(-0.27f, 0.0f, 0.0f);
 Vector3 transLt2(0.27f, 0.0f, 0.0f);
 float scale1 = 0.4f;
@@ -41,14 +41,14 @@ bool setupGraphics(int w, int h) {
     namaTga1 = "Woman1.tga";
 
 	women1 = new Model();
-    women1->InitModel(namaNfg1.c_str(), namaTga1.c_str());
+    women1->InitModel(namaNfg1, namaTga1);
     women1->translation(transLt1);
     women1->scale(scale1);
 
     namaNfg2 = "Woman2.nfg";
     namaTga2 = "Woman2.tga";
 	women2 = new Model();
-    women2->InitModel(namaNfg2.c_str(), namaTga2.c_str());
+    women2->InitModel(namaNfg2, namaTga2);
     women2->translation(transLt2);
     women2->scale(scale2);
 
