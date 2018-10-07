@@ -210,7 +210,7 @@ char * LoadTGA( const char * szFileName, int * width, int * height, int * bpp )
     }
 #endif
     if (f == NULL) {
-        std::string tga_src = getDataDir() + "/" + szFileName;
+        std::string tga_src = std::string(getDataDir()) + "/" + szFileName;
         f = fopen(tga_src.c_str(), "r");
         if (f == NULL) {
             Problem("Load External: Model Texture (.tga) is not available files directory");

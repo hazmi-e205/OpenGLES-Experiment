@@ -5,7 +5,6 @@
 #ifndef OGLES_IMPLEMENT_H
 #define OGLES_IMPLEMENT_H
 
-#include <string>
 #include "PlatformDefine.h"
 
 #if defined (AndroidStudio)
@@ -24,7 +23,7 @@ float getAspectRatio();
 
 //DataFiles Dir
 void setDataDir (const char* datadir);
-std::string getDataDir ();
+const char* getDataDir ();
 
 #if defined (AndroidStudio)
 void setAssetMgr (AAssetManager* assetPtr);

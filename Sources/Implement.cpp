@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include <stdio.h>
+#include <string>
 #include "Implement.h"
 #include "OGLRender.h"
 #include "Speak.h"
@@ -13,7 +14,7 @@
 AAssetManager* assetManagerPtr;
 #endif
 
-std::string dataDirApp;
+const char* dataDirApp;
 int w_screen, h_screen;
 
 void native_init()
@@ -50,7 +51,7 @@ void setDataDir (const char* datadir)
     dataDirApp = datadir;
 }
 
-std::string getDataDir()
+const char* getDataDir()
 {
     return dataDirApp;
 }
@@ -68,8 +69,7 @@ AAssetManager* getAssetMgr()
 #endif
 
 void readTestExternal(){
-    //std::string amo = "/storage/emulated/0/Android/data/id.hazmi.ogles/files/test.txt";
-    std::string amo = getDataDir() + "/test.txt";
+    std::string amo = std::string(getDataDir()) + "/test.txt";
     Problem("External: %s", amo.c_str());
     FILE* pFile = fopen(amo.c_str(),"r");
     char dataread[100];

@@ -8,6 +8,7 @@
 #include "OGLNative.h"
 #include "Speak.h"
 #include "Implement.h"
+#include <string>
 
 #if defined (AndroidStudio)
 #include "AssetNative.h"
@@ -36,7 +37,7 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
     }
 #endif
     if (pFile == NULL) {
-        std::string nfg_src = getDataDir() + "/" + file_nfg;
+        std::string nfg_src = std::string(getDataDir()) + "/" + file_nfg;
         pFile = fopen(nfg_src.c_str(), "r");
         if (pFile == NULL) {
             Problem("Load External: Model Vertices (.nfg) is not available files directory");
