@@ -19,14 +19,14 @@ add_library( # Sets the name of the library.
              # Provides a relative path to your source file(s).
              src/main/cpp/JNIBridge.cpp
              src/main/cpp/AssetNative.cpp
-             ../Sources/Implement.cpp
-             ../Sources/OGLNative.cpp
-             ../Sources/OGLShader.cpp
-             ../Sources/OGLRender.cpp
-             ../Sources/Vertex.cpp
-             ../Sources/Mystic.cpp
-             ../Sources/Model.cpp
-             ../Sources/Speak.cpp
+             ../../../../Sources/Implement.cpp
+             ../../../../Sources/OGLNative.cpp
+             ../../../../Sources/OGLShader.cpp
+             ../../../../Sources/OGLRender.cpp
+             ../../../../Sources/Vertex.cpp
+             ../../../../Sources/Mystic.cpp
+             ../../../../Sources/Model.cpp
+             ../../../../Sources/Speak.cpp
              )
 
 # Specifies libraries CMake should link to your target library. You
@@ -43,5 +43,5 @@ target_link_libraries( # Specifies the target library.
 
 include_directories ( # Here directory you need
                       src/main/cpp/
-                      ../Sources/
+                      ../../../../Sources/
                     )
