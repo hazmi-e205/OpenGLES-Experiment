@@ -1,5 +1,5 @@
 # OpenGLES Experiment
-This project is OpenGLES2 based that available on Android NDK
+This project is OpenGLES2-based that available on Android NDK
 
 
 ### Features
@@ -22,7 +22,7 @@ This project is OpenGLES2 based that available on Android NDK
 + Codeblocks (Linux64)
 
 ### Supported Files Render
-+ NFG (Vertitice) & TGA (Textures)
++ NFG (Vertice) & TGA (Textures)
 + OBJ (Planning...)
 
 by Hazmi E205
