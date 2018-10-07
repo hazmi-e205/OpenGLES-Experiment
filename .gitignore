@@ -1,18 +1,11 @@
-
-OGLES/.idea/caches/build_file_checksums.ser
-OGLES/.idea/codeStyles/Project.xml
-OGLES/.idea/misc.xml
-
-OGLES/\.directory
-
-\.directory
+*.directory
 OGLES/build-*
 OGLES/qtproject/qtproject.pro.user
 *.user
 
-OGLES/projects/CodeBlocks/OGL-CodeBlocks\.layout
+projects/CodeBlocks/OGL-CodeBlocks\.layout
 
-OGLES/projects/CodeBlocks/bin/
-OGLES/projects/CodeBlocks/obj/
+projects/CodeBlocks/bin/
+projects/CodeBlocks/obj/
 
 *.depend
