@@ -12,6 +12,7 @@ This project is OpenGLES2 based that available on Android NDK
 ### Libraries
 + GLFW (precompiled Win32 and Linux64)
 + GLEW (precompiled Win32 and Linux64)
+Note: Not works? you must build by yourself or download via apt-get (ubuntu user)
 
 
 ### Projects
@@ -22,3 +23,4 @@ This project is OpenGLES2 based that available on Android NDK
 
 by Hazmi E205
 <br>Please mention me if you copy any of my code :)
+<br>Call me anytime if you have any question hazmiarifin@gmail.com
