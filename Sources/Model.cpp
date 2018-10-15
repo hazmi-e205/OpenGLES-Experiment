@@ -25,7 +25,7 @@ Model::~Model()
 
 void Model::InitModel(const char * file_nfg, const char * file_tga)
 {
-	ShaderObj = new OGLShader();
+    ShaderObj = new OGLShader();
     ShaderObj->Init(model_vs,model_fs);
     Say("NFG: %s", file_nfg);
     Speak("TGA: %s", file_tga);
