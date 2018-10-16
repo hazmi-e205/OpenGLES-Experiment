@@ -131,21 +131,20 @@ tgaLoader::tgaLoader(const char * file_tga)
 
   width = header.width;
   height = header.height;
-  bpp = header.bits;
-  char * pOutBuffer = new char[header.width * header.height * header.bits / 8];
+
+  textureBuffer = new char[header.width * header.height * header.bits / 8];
   
   switch (header.imagetype)
   {
   case IT_UNCOMPRESSED:
-    LoadUncompressedImage(pOutBuffer, pBuffer, &header);
+    LoadUncompressedImage(textureBuffer, pBuffer, &header);
     break;
   case IT_COMPRESSED:
-    LoadCompressedImage(pOutBuffer, pBuffer, &header);
+    LoadCompressedImage(textureBuffer, pBuffer, &header);
     break;
   }
   
   delete[] pBuffer;
-  textureBuffer = pOutBuffer;
 }
 
 

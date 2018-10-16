@@ -45,7 +45,6 @@ private:
     unsigned int m_noIndices, m_noVertices;
     Vertex *vertices_of_model;
     GLuint *indexData;
-    int width_texture, height_texture, bpp_texture;
     OGLShader *ShaderObj;
 
 public:

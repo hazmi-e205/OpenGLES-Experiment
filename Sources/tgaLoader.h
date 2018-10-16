@@ -34,14 +34,12 @@ private:
   void LoadCompressedImage(char* pDest, char * pSrc, TGA_HEADER * pHeader);
   void LoadUncompressedImage(char* pDest, char * pSrc, TGA_HEADER * pHeader);
   short width, height;
-  unsigned char  bpp;
-  char * textureBuffer;
+  char *textureBuffer;
   
 public:
   char* getTexture() { return textureBuffer; }
   short getWidth() { return width; };
   short getHeight() { return height; };
-  unsigned char  getBpp() { return bpp; };
   tgaLoader(const char * file_tga);
   ~tgaLoader();
 };
