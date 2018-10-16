@@ -51,7 +51,7 @@ nfgReader::nfgReader(const char * file_nfg)
   //file to RAM
   unsigned int i_no = 0;
   for (unsigned int i_No = 0; i_No < (n_indices / 3); i_No++) {
-    unsigned int tempIndex[3];
+    GLuint tempIndex[3];
     fscanf(pFile, "%d.    %d,    %d,    %d\n",
       &i_no, &tempIndex[0], &tempIndex[1], &tempIndex[2]);
     

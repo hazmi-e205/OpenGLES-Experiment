@@ -8,7 +8,7 @@ class nfgReader
 {
 private:
   std::vector<Vertex> vertices_of_model;
-  std::vector<unsigned int> indices_of_model;
+  std::vector<GLuint> indices_of_model;
   unsigned int n_vertices, n_indices;
 
 public:

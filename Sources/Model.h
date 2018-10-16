@@ -42,24 +42,17 @@ private:
 
     Matrix modelScale, modelRotationX, modelRotationY, modelRotationZ, modelTranslation, model_mvp;
     GLuint m_hVertexBuffer, m_hIndexBuffer, textureID;
-    unsigned int m_noIndices, m_noVertices;
-    Vertex *vertices_of_model;
-    GLuint *indexData;
+    unsigned int m_noIndices;
     OGLShader *ShaderObj;
 
 public:
-	void InitModel(const char * file_nfg, const char * file_tga);
+    void InitModel(const char * file_nfg, const char * file_tga);
     void drawModel();
     void scale(float scale_);
     void rotationX(float rotate);
     void rotationY(float rotate);
     void rotationZ(float rotate);
     void translation(Vector3 &transL);
-
-    GLuint getVertexBufferID() { return m_hVertexBuffer; };
-    GLuint getIndexBufferID() { return m_hIndexBuffer; };
-    unsigned int getVertexNumber() { return m_noVertices; };
-    unsigned int getIndexNumber() { return m_noIndices; };
 };
 
 
