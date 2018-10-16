@@ -27,6 +27,8 @@ add_library( # Sets the name of the library.
              ../../../../Sources/Mystic.cpp
              ../../../../Sources/Model.cpp
              ../../../../Sources/Speak.cpp
+			 ../../../../Sources/tgaLoader.cpp
+			 ../../../../Sources/nfgReader.cpp
              )
 
 # Specifies libraries CMake should link to your target library. You

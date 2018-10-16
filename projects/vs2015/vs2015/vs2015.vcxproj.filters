@@ -49,9 +49,6 @@
     <ClInclude Include="..\..\..\Sources\Speak.h">
       <Filter>OGL Sources\Engine\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="nfgReader.h">
-      <Filter>OGL Sources\Engine\Models</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Sources\Implement.h">
       <Filter>OGL Sources\Engine</Filter>
     </ClInclude>
@@ -73,7 +70,10 @@
     <ClInclude Include="..\..\..\Sources\Vertex.h">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClInclude>
-    <ClInclude Include="tgaLoader.h">
+    <ClInclude Include="..\..\..\Sources\nfgReader.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\tgaLoader.h">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,9 +86,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Speak.cpp">
       <Filter>OGL Sources\Engine\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="nfgReader.cpp">
-      <Filter>OGL Sources\Engine\Models</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Implement.cpp">
       <Filter>OGL Sources\Engine</Filter>
@@ -111,7 +108,10 @@
     <ClCompile Include="..\..\..\Sources\Vertex.cpp">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClCompile>
-    <ClCompile Include="tgaLoader.cpp">
+    <ClCompile Include="..\..\..\Sources\nfgReader.cpp">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\tgaLoader.cpp">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClCompile>
   </ItemGroup>

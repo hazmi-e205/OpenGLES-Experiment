@@ -9,6 +9,7 @@
 #include "Speak.h"
 #include "Implement.h"
 #include <string>
+#include "tgaLoader.h"
 
 #if defined (AndroidStudio)
 #include "AssetNative.h"
@@ -95,8 +96,8 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
     //load texture
     glGenTextures(1, &textureID);
     glBindTexture(GL_TEXTURE_2D, textureID);
-    char *imageData = LoadTGA(file_tga, &width_texture, &height_texture, &bpp_texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width_texture, height_texture, 0, GL_RGB, GL_UNSIGNED_BYTE, imageData);
+    tgaLoader *myTexture = new tgaLoader(file_tga);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->getWidth(), myTexture->getHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->getTexture());
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -104,7 +105,7 @@ void Model::InitModel(const char * file_nfg, const char * file_tga)
 
     delete[]vertices_of_model;
     delete[]indexData;
-    delete imageData;
+    delete myTexture;
 
     modelScale.SetIdentity();
     modelRotationX.SetIdentity();
