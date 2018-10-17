@@ -2,14 +2,10 @@
 //
 
 #include "stdafx.h"
-
-#define _CRTDBG_MAP_ALLOC  
-#include <stdlib.h>  
-#include <crtdbg.h> 
-
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 #include "Implement.h"
+#include "LeakChecker.h"
 
 int main(void)
 {
@@ -56,7 +52,6 @@ int main(void)
 	}
 
 	glfwTerminate();
-  _CrtDumpMemoryLeaks();
-  _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+  LeakCheck();
 	return 0;
 }
