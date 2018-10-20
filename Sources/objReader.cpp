@@ -1,11 +1,11 @@
 #include "stdafx.h"
-#include "nfgReader.h"
+#include "objReader.h"
 #include <string>
 #include "PlatformDefine.h"
 #include "Implement.h"
 #include "Speak.h"
 
-nfgReader::nfgReader(const char * file_nfg)
+objReader::objReader(const char * file_nfg)
 {
   FILE* pFile = NULL;
 #if defined (AndroidStudio)
@@ -66,6 +66,6 @@ nfgReader::nfgReader(const char * file_nfg)
 }
 
 
-nfgReader::~nfgReader()
+objReader::~objReader()
 {
 }

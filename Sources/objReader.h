@@ -4,7 +4,7 @@
 #include "Vertex.h"
 #include "OGLAdapter.h"
 
-class nfgReader
+class objReader
 {
 private:
   std::vector<Vertex> vertices_of_model;
@@ -17,7 +17,7 @@ public:
   unsigned int getLengthVetices() { return vertices_of_model.size(); };
   unsigned int getLengthIndices() { return indices_of_model.size(); };
 
-  nfgReader(const char * file_nfg);
-  ~nfgReader();
+  objReader(const char * file_nfg);
+  ~objReader();
 };
 

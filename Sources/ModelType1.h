@@ -2,16 +2,17 @@
 // Created by hazmi.arifin on 5/14/2018.
 //
 
-#ifndef OGLES_MODEL_H
-#define OGLES_MODEL_H
+#ifndef OGLES_MODELTYPE1_H
+#define OGLES_MODELTYPE1_H
 
+#include "ModelType.h"
 #include "Vertex.h"
 #include "OGLShader.h"
 
-class Model {
+class ModelType1 : public ModelType {
 public:
-	Model();
-	~Model();
+  ModelType1(const char * file_nfg, const char * file_tga);
+	~ModelType1();
 
 private:
     const char* model_vs = ""
@@ -46,8 +47,7 @@ private:
     OGLShader *ShaderObj;
 
 public:
-    void InitModel(const char * file_nfg, const char * file_tga);
-    void drawModel();
+    void draw();
     void scale(float scale_);
     void rotationX(float rotate);
     void rotationY(float rotate);

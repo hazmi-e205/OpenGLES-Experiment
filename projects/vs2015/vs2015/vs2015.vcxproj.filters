@@ -82,6 +82,21 @@
     <ClInclude Include="..\..\..\Sources\ModelType1.h">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Sources\objReader.h">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\pngLoader.h">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\ModelType2.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Model.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\ModelType.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -118,6 +133,21 @@
       <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\ModelType1.cpp">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\objReader.cpp">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\pngLoader.cpp">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\ModelType2.cpp">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Model.cpp">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\ModelType.cpp">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClCompile>
   </ItemGroup>

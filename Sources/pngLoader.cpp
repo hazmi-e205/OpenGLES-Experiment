@@ -1,11 +1,11 @@
 #include "stdafx.h"
-#include "tgaLoader.h"
+#include "pngLoader.h"
 #include <string>
 #include "PlatformDefine.h"
 #include "Implement.h"
 #include "Speak.h"
 
-void tgaLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
+void pngLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
 {
   int w = pHeader->width;
   int h = pHeader->height;
@@ -53,7 +53,7 @@ void tgaLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHea
   }
 }
 
-void tgaLoader::LoadUncompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
+void pngLoader::LoadUncompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
 {
   int w = pHeader->width;
   int h = pHeader->height;
@@ -87,7 +87,7 @@ void tgaLoader::LoadUncompressedImage(char * pDest, char * pSrc, TGA_HEADER * pH
   }
 }
 
-tgaLoader::tgaLoader(const char * file_tga)
+pngLoader::pngLoader(const char * file_tga)
 {
   FILE* f = NULL;
 #if defined (AndroidStudio)
@@ -148,7 +148,7 @@ tgaLoader::tgaLoader(const char * file_tga)
 }
 
 
-tgaLoader::~tgaLoader()
+pngLoader::~pngLoader()
 {
   delete textureBuffer;
 }

@@ -165,12 +165,17 @@ if exist $(OutDir)\glew32.dll  (
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Sources\Implement.h" />
+    <ClInclude Include="..\..\..\Sources\Model.h" />
+    <ClInclude Include="..\..\..\Sources\ModelType.h" />
     <ClInclude Include="..\..\..\Sources\ModelType1.h" />
+    <ClInclude Include="..\..\..\Sources\ModelType2.h" />
     <ClInclude Include="..\..\..\Sources\Mystic.h" />
     <ClInclude Include="..\..\..\Sources\nfgReader.h" />
+    <ClInclude Include="..\..\..\Sources\objReader.h" />
     <ClInclude Include="..\..\..\Sources\OGLNative.h" />
     <ClInclude Include="..\..\..\Sources\OGLRender.h" />
     <ClInclude Include="..\..\..\Sources\OGLShader.h" />
+    <ClInclude Include="..\..\..\Sources\pngLoader.h" />
     <ClInclude Include="..\..\..\Sources\Speak.h" />
     <ClInclude Include="..\..\..\Sources\tgaLoader.h" />
     <ClInclude Include="..\..\..\Sources\Vertex.h" />
@@ -182,12 +187,17 @@ if exist $(OutDir)\glew32.dll  (
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Sources\Implement.cpp" />
+    <ClCompile Include="..\..\..\Sources\Model.cpp" />
+    <ClCompile Include="..\..\..\Sources\ModelType.cpp" />
     <ClCompile Include="..\..\..\Sources\ModelType1.cpp" />
+    <ClCompile Include="..\..\..\Sources\ModelType2.cpp" />
     <ClCompile Include="..\..\..\Sources\Mystic.cpp" />
     <ClCompile Include="..\..\..\Sources\nfgReader.cpp" />
+    <ClCompile Include="..\..\..\Sources\objReader.cpp" />
     <ClCompile Include="..\..\..\Sources\OGLNative.cpp" />
     <ClCompile Include="..\..\..\Sources\OGLRender.cpp" />
     <ClCompile Include="..\..\..\Sources\OGLShader.cpp" />
+    <ClCompile Include="..\..\..\Sources\pngLoader.cpp" />
     <ClCompile Include="..\..\..\Sources\Speak.cpp" />
     <ClCompile Include="..\..\..\Sources\tgaLoader.cpp" />
     <ClCompile Include="..\..\..\Sources\Vertex.cpp" />

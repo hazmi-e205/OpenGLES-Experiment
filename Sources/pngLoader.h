@@ -1,6 +1,6 @@
 #pragma once
 
-class tgaLoader
+class pngLoader
 {
 private:
 #pragma pack(push,x1)					// Byte alignment (8-bit)
@@ -40,7 +40,7 @@ public:
   char* getTexture() { return textureBuffer; }
   short getWidth() { return width; };
   short getHeight() { return height; };
-  tgaLoader(const char * file_tga);
-  ~tgaLoader();
+  pngLoader(const char * file_tga);
+  ~pngLoader();
 };
 

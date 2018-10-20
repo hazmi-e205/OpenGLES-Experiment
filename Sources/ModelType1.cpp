@@ -16,60 +16,56 @@
 #include "AssetNative.h"
 #endif
 
-Model::Model()
+ModelType1::ModelType1(const char * file_nfg, const char * file_tga)
 {
+  ShaderObj = new OGLShader();
+  ShaderObj->Init(model_vs, model_fs);
+
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glEnable(GL_DEPTH_TEST);
+
+  Say("NFG: %s", file_nfg);
+  Speak("TGA: %s", file_tga);
+  nfgReader *myModel = new nfgReader(file_nfg);
+
+  glGenBuffers(1, &m_hVertexBuffer);
+  glBindBuffer(GL_ARRAY_BUFFER, m_hVertexBuffer);
+  glBufferData(GL_ARRAY_BUFFER, myModel->getLengthVetices() * sizeof(Vertex), myModel->getVertices(), GL_STATIC_DRAW);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+  glGenBuffers(1, &m_hIndexBuffer);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_hIndexBuffer);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, myModel->getLengthIndices() * sizeof(GLuint), myModel->getIndices(), GL_STATIC_DRAW);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+  m_noIndices = myModel->getLengthIndices();
+
+  //load texture
+  glGenTextures(1, &textureID);
+  glBindTexture(GL_TEXTURE_2D, textureID);
+  tgaLoader *myTexture = new tgaLoader(file_tga);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->getWidth(), myTexture->getHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->getTexture());
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+  delete myTexture;
+  delete myModel;
+
+  modelScale.SetIdentity();
+  modelRotationX.SetIdentity();
+  modelRotationY.SetIdentity();
+  modelRotationZ.SetIdentity();
+  modelTranslation.SetIdentity();
+  model_mvp.SetIdentity();
 }
 
 
-Model::~Model()
+ModelType1::~ModelType1()
 {
 }
 
-void Model::InitModel(const char * file_nfg, const char * file_tga)
-{
-    ShaderObj = new OGLShader();
-    ShaderObj->Init(model_vs,model_fs);
-    
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    glEnable(GL_DEPTH_TEST);
-
-    Say("NFG: %s", file_nfg);
-    Speak("TGA: %s", file_tga);
-    nfgReader *myModel = new nfgReader(file_nfg);
-
-    glGenBuffers(1, &m_hVertexBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, m_hVertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, myModel->getLengthVetices() * sizeof(Vertex), myModel->getVertices(), GL_STATIC_DRAW);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    glGenBuffers(1, &m_hIndexBuffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_hIndexBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, myModel->getLengthIndices() * sizeof(GLuint), myModel->getIndices(), GL_STATIC_DRAW);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-    m_noIndices = myModel->getLengthIndices();
-
-    //load texture
-    glGenTextures(1, &textureID);
-    glBindTexture(GL_TEXTURE_2D, textureID);
-    tgaLoader *myTexture = new tgaLoader(file_tga);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->getWidth(), myTexture->getHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->getTexture());
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-    delete myTexture;
-    delete myModel;
-
-    modelScale.SetIdentity();
-    modelRotationX.SetIdentity();
-    modelRotationY.SetIdentity();
-    modelRotationZ.SetIdentity();
-    modelTranslation.SetIdentity();
-    model_mvp.SetIdentity();
-}
-
-void Model::drawModel() {
+void ModelType1::draw() {
     glUseProgram(ShaderObj->GetProgram());
     glBindBuffer(GL_ARRAY_BUFFER, m_hVertexBuffer);
     if (ShaderObj->GetAttributes().position != -1)
@@ -105,22 +101,22 @@ void Model::drawModel() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void Model::scale(float scale_) {
+void ModelType1::scale(float scale_) {
     modelScale.SetScale(scale_);
 }
 
-void Model::rotationX(float rotate) {
+void ModelType1::rotationX(float rotate) {
     modelRotationX.SetRotationX(rotate);
 }
 
-void Model::rotationY(float rotate) {
+void ModelType1::rotationY(float rotate) {
     modelRotationY.SetRotationY(rotate);
 }
 
-void Model::rotationZ(float rotate) {
+void ModelType1::rotationZ(float rotate) {
     modelRotationZ.SetRotationZ(rotate);
 }
 
-void Model::translation(Vector3 &transL) {
+void ModelType1::translation(Vector3 &transL) {
     modelTranslation.SetTranslation(transL);
 }

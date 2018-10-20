@@ -16,7 +16,7 @@
 #include "GL/glew.h"
 #endif
 
-Model *women1, *women2;
+ModelType1 *women1, *women2;
 const char *namaNfg1, *namaTga1;
 const char *namaNfg2, *namaTga2;
 Vector3 transLt1(-0.27f, 0.0f, 0.0f);
@@ -39,16 +39,15 @@ bool setupGraphics(int w, int h) {
 
     namaNfg1 = "Woman1.nfg";
     namaTga1 = "Woman1.tga";
-
-	women1 = new Model();
-    women1->InitModel(namaNfg1, namaTga1);
+    
+    women1 = new ModelType1(namaNfg1, namaTga1);
     women1->translation(transLt1);
     women1->scale(scale1);
 
     namaNfg2 = "Woman2.nfg";
     namaTga2 = "Woman2.tga";
-	women2 = new Model();
-    women2->InitModel(namaNfg2, namaTga2);
+    
+    women2 = new ModelType1(namaNfg2, namaTga2);
     women2->translation(transLt2);
     women2->scale(scale2);
 
@@ -60,11 +59,11 @@ void renderFrame() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     women1->translation(transLt1);
     women1->scale(scale1);
-    women1->drawModel();
+    women1->draw();
 
     women2->translation(transLt2);
     women2->scale(scale2);
-    women2->drawModel();
+    women2->draw();
 
     static float rot = 0.0f;
     women1->rotationY(rot);
