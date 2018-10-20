@@ -25,7 +25,7 @@ add_library( # Sets the name of the library.
              ../../../../Sources/OGLRender.cpp
              ../../../../Sources/Vertex.cpp
              ../../../../Sources/Mystic.cpp
-             ../../../../Sources/Model.cpp
+             ../../../../Sources/ModelType1.cpp
              ../../../../Sources/Speak.cpp
 			 ../../../../Sources/tgaLoader.cpp
 			 ../../../../Sources/nfgReader.cpp
