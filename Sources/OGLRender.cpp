@@ -7,7 +7,7 @@
 #include "OGLNative.h"
 #include "OGLRender.h"
 #include "Speak.h"
-#include "Model.h"
+#include "ModelType1.h"
 #include "Implement.h"
 
 #if defined (AndroidStudio)

@@ -3,7 +3,7 @@
 //
 
 #include "stdafx.h"
-#include "Model.h"
+#include "ModelType1.h"
 #include <stdio.h>
 #include "OGLNative.h"
 #include "Speak.h"

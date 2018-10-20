@@ -29,7 +29,7 @@
     <Filter Include="OGL Sources\MyProject\Objects">
       <UniqueIdentifier>{50a9b530-4e88-465e-8ee0-c1a3e4657bbb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="OGL Sources\Engine\Models\Creatures">
+    <Filter Include="OGL Sources\Engine\Models\Resources">
       <UniqueIdentifier>{86bd1f43-45a1-47d1-865b-675303384953}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -68,19 +68,19 @@
       <Filter>OGL Sources\Engine\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Sources\Vertex.h">
-      <Filter>OGL Sources\Engine\Models\Creatures</Filter>
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Sources\nfgReader.h">
-      <Filter>OGL Sources\Engine\Models\Creatures</Filter>
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Sources\tgaLoader.h">
-      <Filter>OGL Sources\Engine\Models\Creatures</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Model.h">
-      <Filter>OGL Sources\Engine\Models</Filter>
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
     <ClInclude Include="LeakChecker.h">
       <Filter>Win32 Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\ModelType1.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -109,15 +109,15 @@
       <Filter>OGL Sources\Engine\Utils</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\nfgReader.cpp">
-      <Filter>OGL Sources\Engine\Models\Creatures</Filter>
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\tgaLoader.cpp">
-      <Filter>OGL Sources\Engine\Models\Creatures</Filter>
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Vertex.cpp">
-      <Filter>OGL Sources\Engine\Models\Creatures</Filter>
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Model.cpp">
+    <ClCompile Include="..\..\..\Sources\ModelType1.cpp">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClCompile>
   </ItemGroup>
