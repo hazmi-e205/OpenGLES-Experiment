@@ -154,5 +154,4 @@ tgaLoader::tgaLoader(const char * file_tga)
 
 tgaLoader::~tgaLoader()
 {
-  delete textureBuffer;
 }

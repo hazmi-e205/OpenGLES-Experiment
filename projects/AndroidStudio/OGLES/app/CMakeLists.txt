@@ -20,16 +20,16 @@ add_library( # Sets the name of the library.
              src/main/cpp/JNIBridge.cpp
              src/main/cpp/AssetNative.cpp
              ../../../../Sources/Engine/Implement.cpp
+             ../../../../Sources/Engine/Utils/Mystic.cpp
+             ../../../../Sources/Engine/Utils/Speak.cpp
              ../../../../Sources/Engine/OGL/OGLNative.cpp
              ../../../../Sources/Engine/OGL/OGLShader.cpp
              ../../../../Sources/Engine/OGL/OGLRender.cpp
              ../../../../Sources/Engine/Models/Resources/Vertex.cpp
-             ../../../../Sources/Engine/Utils/Mystic.cpp
-             ../../../../Sources/Engine/Models/ModelType.cpp
-             ../../../../Sources/Engine/Models/ModelType1.cpp
-             ../../../../Sources/Engine/Utils/Speak.cpp
 			 ../../../../Sources/Engine/Models/Resources/tgaLoader.cpp
 			 ../../../../Sources/Engine/Models/Resources/nfgReader.cpp
+             ../../../../Sources/Engine/Models/ModelType.cpp
+             ../../../../Sources/Engine/Models/ModelType1.cpp
              )
 
 # Specifies libraries CMake should link to your target library. You
