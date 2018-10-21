@@ -4,8 +4,8 @@
 
 #include "stdafx.h"
 #include "OGLNative.h"
-#include "Speak.h"
-#include "Implement.h"
+#include "Engine/Utils/Speak.h"
+#include "Engine/Implement.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>

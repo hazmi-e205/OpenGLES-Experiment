@@ -2,8 +2,8 @@
 #include "pngLoader.h"
 #include <string>
 #include "PlatformDefine.h"
-#include "Implement.h"
-#include "Speak.h"
+#include "Engine/Implement.h"
+#include "Engine/Utils/Speak.h"
 
 void pngLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
 {

@@ -19,17 +19,17 @@ add_library( # Sets the name of the library.
              # Provides a relative path to your source file(s).
              src/main/cpp/JNIBridge.cpp
              src/main/cpp/AssetNative.cpp
-             ../../../../Sources/Implement.cpp
-             ../../../../Sources/OGLNative.cpp
-             ../../../../Sources/OGLShader.cpp
-             ../../../../Sources/OGLRender.cpp
-             ../../../../Sources/Vertex.cpp
-             ../../../../Sources/Mystic.cpp
-             ../../../../Sources/ModelType.cpp
-             ../../../../Sources/ModelType1.cpp
-             ../../../../Sources/Speak.cpp
-			 ../../../../Sources/tgaLoader.cpp
-			 ../../../../Sources/nfgReader.cpp
+             ../../../../Sources/Engine/Implement.cpp
+             ../../../../Sources/Engine/OGL/OGLNative.cpp
+             ../../../../Sources/Engine/OGL/OGLShader.cpp
+             ../../../../Sources/Engine/OGL/OGLRender.cpp
+             ../../../../Sources/Engine/Models/Resources/Vertex.cpp
+             ../../../../Sources/Engine/Utils/Mystic.cpp
+             ../../../../Sources/Engine/Models/ModelType.cpp
+             ../../../../Sources/Engine/Models/ModelType1.cpp
+             ../../../../Sources/Engine/Utils/Speak.cpp
+			 ../../../../Sources/Engine/Models/Resources/tgaLoader.cpp
+			 ../../../../Sources/Engine/Models/Resources/nfgReader.cpp
              )
 
 # Specifies libraries CMake should link to your target library. You

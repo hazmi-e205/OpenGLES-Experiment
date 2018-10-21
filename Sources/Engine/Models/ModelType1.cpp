@@ -4,11 +4,11 @@
 
 #include "stdafx.h"
 #include "ModelType1.h"
-#include "OGLNative.h"
-#include "Speak.h"
-#include "Implement.h"
-#include "tgaLoader.h"
-#include "nfgReader.h"
+#include "Engine/OGL/OGLNative.h"
+#include "Engine/Utils/Speak.h"
+#include "Engine/Implement.h"
+#include "Engine/Models/Resources/tgaLoader.h"
+#include "Engine/Models/Resources/nfgReader.h"
 
 ModelType1::ModelType1(const char * file_nfg, const char * file_tga)
 {

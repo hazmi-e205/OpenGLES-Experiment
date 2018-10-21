@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "tgaLoader.h"
 #include <string>
-#include "Implement.h"
-#include "Speak.h"
+#include "Engine/Implement.h"
+#include "Engine/Utils/Speak.h"
 #include "PlatformDefine.h"
 #if defined(AndroidStudio)
 #include <AssetNative.h>
@@ -103,6 +103,7 @@ tgaLoader::tgaLoader(const char * file_tga)
     std::string tga_src = std::string(getDataDir()) + "/" + file_tga;
     f = fopen(tga_src.c_str(), "r");
     if (f == NULL) {
+      Problem("Load External: %s", tga_src.c_str());
       Problem("Load External: Model Texture (.tga) is not available files directory");
       return;
     }

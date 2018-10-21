@@ -4,13 +4,11 @@
 
 #include "stdafx.h"
 #include "ModelType2.h"
-#include <stdio.h>
-#include "OGLNative.h"
-#include "Speak.h"
-#include "Implement.h"
-#include <string>
-#include "tgaLoader.h"
-#include "nfgReader.h"
+#include "Engine/OGL/OGLNative.h"
+#include "Engine/Utils/Speak.h"
+#include "Engine/Implement.h"
+#include "Engine/Models/Resources/tgaLoader.h"
+#include "Engine/Models/Resources/nfgReader.h"
 
 #if defined (AndroidStudio)
 #include "AssetNative.h"

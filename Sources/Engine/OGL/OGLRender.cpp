@@ -5,10 +5,10 @@
 #include "stdafx.h"
 #include "OGLNative.h"
 #include "OGLRender.h"
-#include "Speak.h"
-#include "ModelType1.h"
-#include "ModelType2.h"
-#include "Implement.h"
+#include "Engine/Utils/Speak.h"
+#include "Engine/Models/ModelType1.h"
+#include "Engine/Models/ModelType2.h"
+#include "Engine/Implement.h"
 
 #if defined (AndroidStudio)
 #include <GLES2/gl2.h>

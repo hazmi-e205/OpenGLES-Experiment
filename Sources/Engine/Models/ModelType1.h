@@ -6,8 +6,8 @@
 #define OGLES_MODELTYPE1_H
 
 #include "ModelType.h"
-#include "Vertex.h"
-#include "OGLShader.h"
+#include "Engine/Models/Resources/Vertex.h"
+#include "Engine/OGL/OGLShader.h"
 
 class ModelType1 : public ModelType {
 public:

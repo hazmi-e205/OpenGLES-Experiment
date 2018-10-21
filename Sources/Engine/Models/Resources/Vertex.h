@@ -5,7 +5,7 @@
 #ifndef OGLES_VERTEX_H
 #define OGLES_VERTEX_H
 
-#include "Mystic.h"
+#include "Engine/Utils/Mystic.h"
 
 struct Vertex
 {

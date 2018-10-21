@@ -6,8 +6,8 @@
 #include <stdio.h>
 #include <string>
 #include "Implement.h"
-#include "OGLRender.h"
-#include "Speak.h"
+#include "Engine/OGL/OGLRender.h"
+#include "Engine/Utils/Speak.h"
 #include "PlatformDefine.h"
 
 #if defined (AndroidStudio)

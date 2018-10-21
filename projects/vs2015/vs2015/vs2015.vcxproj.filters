@@ -12,25 +12,19 @@
       <UniqueIdentifier>{cd34e9e4-c302-4103-bfd2-0a924e848963}</UniqueIdentifier>
     </Filter>
     <Filter Include="OGL Sources\Engine">
-      <UniqueIdentifier>{48490392-6d57-4b0e-ae54-e2c91103a8fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OGL Sources\Engine\OGL">
-      <UniqueIdentifier>{82192edc-315b-45b2-a029-860f9f3cbf90}</UniqueIdentifier>
+      <UniqueIdentifier>{98aa58b3-89d0-4873-aa4c-cf1019ac6032}</UniqueIdentifier>
     </Filter>
     <Filter Include="OGL Sources\Engine\Utils">
-      <UniqueIdentifier>{f2a15a2e-cacb-4150-a5c3-60c4e6c57fb9}</UniqueIdentifier>
+      <UniqueIdentifier>{8c8c4f3d-c664-4d93-93e8-f1707e49329f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OGL Sources\Engine\OGL">
+      <UniqueIdentifier>{81f4d7f7-3d70-4555-8e4e-bcfed6f78e40}</UniqueIdentifier>
     </Filter>
     <Filter Include="OGL Sources\Engine\Models">
-      <UniqueIdentifier>{42df8671-1d77-4636-b8b3-06fc6aa00646}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OGL Sources\MyProject">
-      <UniqueIdentifier>{0223448c-b107-41b7-a520-03e0a4974555}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="OGL Sources\MyProject\Objects">
-      <UniqueIdentifier>{50a9b530-4e88-465e-8ee0-c1a3e4657bbb}</UniqueIdentifier>
+      <UniqueIdentifier>{964372c2-7ef9-4773-ac81-9c342be06e9b}</UniqueIdentifier>
     </Filter>
     <Filter Include="OGL Sources\Engine\Models\Resources">
-      <UniqueIdentifier>{86bd1f43-45a1-47d1-865b-675303384953}</UniqueIdentifier>
+      <UniqueIdentifier>{700d6200-10d2-4e7d-b81c-feb10ef57797}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,53 +43,53 @@
     <ClInclude Include="targetver.h">
       <Filter>Win32 Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Speak.h">
-      <Filter>OGL Sources\Engine\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Implement.h">
-      <Filter>OGL Sources\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\OGLNative.h">
-      <Filter>OGL Sources\Engine\OGL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\OGLRender.h">
-      <Filter>OGL Sources\Engine\OGL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\OGLShader.h">
-      <Filter>OGL Sources\Engine\OGL</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Mystic.h">
-      <Filter>OGL Sources\Engine\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Vertex.h">
-      <Filter>OGL Sources\Engine\Models\Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\nfgReader.h">
-      <Filter>OGL Sources\Engine\Models\Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\tgaLoader.h">
-      <Filter>OGL Sources\Engine\Models\Resources</Filter>
-    </ClInclude>
     <ClInclude Include="LeakChecker.h">
       <Filter>Win32 Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\ModelType1.h">
+    <ClInclude Include="..\..\..\Sources\Engine\Implement.h">
+      <Filter>OGL Sources\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Utils\Speak.h">
+      <Filter>OGL Sources\Engine\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Utils\Mystic.h">
+      <Filter>OGL Sources\Engine\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLShader.h">
+      <Filter>OGL Sources\Engine\OGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLNative.h">
+      <Filter>OGL Sources\Engine\OGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLRender.h">
+      <Filter>OGL Sources\Engine\OGL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Model.h">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\objReader.h">
+    <ClInclude Include="..\..\..\Sources\Engine\Models\ModelType.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\ModelType1.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\ModelType2.h">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\nfgReader.h">
       <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\pngLoader.h">
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\objReader.h">
       <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\ModelType2.h">
-      <Filter>OGL Sources\Engine\Models</Filter>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\pngLoader.h">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Model.h">
-      <Filter>OGL Sources\Engine\Models</Filter>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\tgaLoader.h">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\ModelType.h">
-      <Filter>OGL Sources\Engine\Models</Filter>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\Vertex.h">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -105,50 +99,50 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Win32 Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Speak.cpp">
-      <Filter>OGL Sources\Engine\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Implement.cpp">
+    <ClCompile Include="..\..\..\Sources\Engine\Implement.cpp">
       <Filter>OGL Sources\Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\OGLNative.cpp">
-      <Filter>OGL Sources\Engine\OGL</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Sources\OGLRender.cpp">
-      <Filter>OGL Sources\Engine\OGL</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Sources\OGLShader.cpp">
-      <Filter>OGL Sources\Engine\OGL</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Mystic.cpp">
+    <ClCompile Include="..\..\..\Sources\Engine\Utils\Mystic.cpp">
       <Filter>OGL Sources\Engine\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\nfgReader.cpp">
-      <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    <ClCompile Include="..\..\..\Sources\Engine\Utils\Speak.cpp">
+      <Filter>OGL Sources\Engine\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\tgaLoader.cpp">
-      <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLNative.cpp">
+      <Filter>OGL Sources\Engine\OGL</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Vertex.cpp">
-      <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLRender.cpp">
+      <Filter>OGL Sources\Engine\OGL</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\ModelType1.cpp">
+    <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLShader.cpp">
+      <Filter>OGL Sources\Engine\OGL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Model.cpp">
       <Filter>OGL Sources\Engine\Models</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\objReader.cpp">
+    <ClCompile Include="..\..\..\Sources\Engine\Models\ModelType.cpp">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\ModelType1.cpp">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\ModelType2.cpp">
+      <Filter>OGL Sources\Engine\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Resources\objReader.cpp">
       <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\pngLoader.cpp">
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Resources\pngLoader.cpp">
       <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\ModelType2.cpp">
-      <Filter>OGL Sources\Engine\Models</Filter>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Resources\tgaLoader.cpp">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Model.cpp">
-      <Filter>OGL Sources\Engine\Models</Filter>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Resources\Vertex.cpp">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\ModelType.cpp">
-      <Filter>OGL Sources\Engine\Models</Filter>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Resources\nfgReader.cpp">
+      <Filter>OGL Sources\Engine\Models\Resources</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -5,7 +5,7 @@
 #ifndef OGLES_MODELTYPE_H
 #define OGLES_MODELTYPE_H
 
-#include "Mystic.h"
+#include "Engine/Utils/Mystic.h"
 
 class ModelType {
 public:

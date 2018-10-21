@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "nfgReader.h"
 #include <string>
-#include "Implement.h"
-#include "Speak.h"
+#include "Engine/Implement.h"
+#include "Engine/Utils/Speak.h"
 #include "PlatformDefine.h"
 #if defined(AndroidStudio)
 #include <AssetNative.h>
@@ -21,6 +21,7 @@ nfgReader::nfgReader(const char * file_nfg)
     std::string nfg_src = std::string(getDataDir()) + "/" + file_nfg;
     pFile = fopen(nfg_src.c_str(), "r");
     if (pFile == NULL) {
+      Problem("Load External: %s", nfg_src.c_str());
       Problem("Load External: Model Vertices (.nfg) is not available files directory");
       return;
     }
