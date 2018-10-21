@@ -71,14 +71,6 @@
 		<Unit filename="../../Sources/Engine/Utils/Mystic.h" />
 		<Unit filename="../../Sources/Engine/Utils/Speak.cpp" />
 		<Unit filename="../../Sources/Engine/Utils/Speak.h" />
-		<Unit filename="../../Sources/Implement.h" />
-		<Unit filename="../../Sources/Model.h" />
-		<Unit filename="../../Sources/Mystic.h" />
-		<Unit filename="../../Sources/OGLNative.h" />
-		<Unit filename="../../Sources/OGLRender.h" />
-		<Unit filename="../../Sources/OGLShader.h" />
-		<Unit filename="../../Sources/Speak.h" />
-		<Unit filename="../../Sources/Vertex.h" />
 		<Unit filename="OGLAdapter.h" />
 		<Unit filename="PlatformDefine.h" />
 		<Unit filename="main.cpp" />
