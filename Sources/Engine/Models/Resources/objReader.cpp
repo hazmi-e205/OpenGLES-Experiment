@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "objReader.h"
 #include <string>
+#include <string.h>
 #include "PlatformDefine.h"
 #include "Engine/Implement.h"
 #include "Engine/Utils/Speak.h"
