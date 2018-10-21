@@ -4,17 +4,11 @@
 
 #include "stdafx.h"
 #include "ModelType1.h"
-#include <stdio.h>
 #include "OGLNative.h"
 #include "Speak.h"
 #include "Implement.h"
-#include <string>
 #include "tgaLoader.h"
 #include "nfgReader.h"
-
-#if defined (AndroidStudio)
-#include "AssetNative.h"
-#endif
 
 ModelType1::ModelType1(const char * file_nfg, const char * file_tga)
 {
@@ -60,6 +54,15 @@ ModelType1::ModelType1(const char * file_nfg, const char * file_tga)
   model_mvp.SetIdentity();
 }
 
+/*
+ModelType::~ModelType()
+{
+}
+
+ModelType::ModelType()
+{
+}
+*/
 
 ModelType1::~ModelType1()
 {

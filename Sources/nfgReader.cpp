@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "nfgReader.h"
 #include <string>
-#include "PlatformDefine.h"
 #include "Implement.h"
 #include "Speak.h"
+#include "PlatformDefine.h"
+#if defined(AndroidStudio)
+#include <AssetNative.h>
+#endif
 
 nfgReader::nfgReader(const char * file_nfg)
 {

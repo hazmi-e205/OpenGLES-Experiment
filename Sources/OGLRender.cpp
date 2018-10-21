@@ -3,11 +3,11 @@
 //
 
 #include "stdafx.h"
-#include <string>
 #include "OGLNative.h"
 #include "OGLRender.h"
 #include "Speak.h"
 #include "ModelType1.h"
+#include "ModelType2.h"
 #include "Implement.h"
 
 #if defined (AndroidStudio)
@@ -16,7 +16,8 @@
 #include "GL/glew.h"
 #endif
 
-ModelType1 *women1, *women2;
+ModelType1 *women1;
+ModelType2 *deer;
 const char *namaNfg1, *namaTga1;
 const char *namaNfg2, *namaTga2;
 Vector3 transLt1(-0.27f, 0.0f, 0.0f);
@@ -47,9 +48,9 @@ bool setupGraphics(int w, int h) {
     namaNfg2 = "Woman2.nfg";
     namaTga2 = "Woman2.tga";
     
-    women2 = new ModelType1(namaNfg2, namaTga2);
-    women2->translation(transLt2);
-    women2->scale(scale2);
+    //women2 = new ModelType1(namaNfg2, namaTga2);
+    //women2->translation(transLt2);
+    //women2->scale(scale2);
 
     return true;
 }
@@ -61,13 +62,13 @@ void renderFrame() {
     women1->scale(scale1);
     women1->draw();
 
-    women2->translation(transLt2);
-    women2->scale(scale2);
-    women2->draw();
+    //women2->translation(transLt2);
+    //women2->scale(scale2);
+    //women2->draw();
 
     static float rot = 0.0f;
     women1->rotationY(rot);
-    women2->rotationY(-rot);
+    //women2->rotationY(-rot);
     rot += 0.01f;
 }
 

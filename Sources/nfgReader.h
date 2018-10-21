@@ -2,7 +2,6 @@
 
 #include <vector>
 #include "Vertex.h"
-#include "OGLAdapter.h"
 
 class nfgReader
 {

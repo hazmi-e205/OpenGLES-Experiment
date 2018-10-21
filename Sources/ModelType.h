@@ -9,8 +9,8 @@
 
 class ModelType {
 public:
-  ModelType();
-	~ModelType();
+	//ModelType();
+	//~ModelType();
   
   void draw();
   void scale(float scale_);

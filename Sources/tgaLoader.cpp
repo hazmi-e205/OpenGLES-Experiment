@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "tgaLoader.h"
 #include <string>
-#include "PlatformDefine.h"
 #include "Implement.h"
 #include "Speak.h"
+#include "PlatformDefine.h"
+#if defined(AndroidStudio)
+#include <AssetNative.h>
+#endif
 
 void tgaLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
 {
@@ -91,7 +94,7 @@ tgaLoader::tgaLoader(const char * file_tga)
 {
   FILE* f = NULL;
 #if defined (AndroidStudio)
-  f = asset_fopen(szFileName, "r");
+  f = asset_fopen(file_tga, "r");
   if (f == NULL) {
     Problem("Load Internal: Model Texture (.tga) is not available on asset");
   }

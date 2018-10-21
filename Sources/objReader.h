@@ -2,7 +2,6 @@
 
 #include <vector>
 #include "Vertex.h"
-#include "OGLAdapter.h"
 
 class objReader
 {
@@ -17,7 +16,7 @@ public:
   unsigned int getLengthVetices() { return vertices_of_model.size(); };
   unsigned int getLengthIndices() { return indices_of_model.size(); };
 
-  objReader(const char * file_nfg);
+  objReader(const char * file_obj);
   ~objReader();
 };
 

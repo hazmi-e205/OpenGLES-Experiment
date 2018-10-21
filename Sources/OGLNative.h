@@ -12,7 +12,6 @@
 
 #elif defined (VisualStudio) || defined (CodeBlocks)
 #include "OGLAdapter.h"
-
 #endif
 
 GLuint createProgram(const char* pVertexSource, const char* pFragmentSource);

@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "ModelType.h"
 
+/*
 ModelType::ModelType()
 {
 }
@@ -12,6 +13,7 @@ ModelType::ModelType()
 ModelType::~ModelType()
 {
 }
+ */
 
 void ModelType::draw() 
 {
