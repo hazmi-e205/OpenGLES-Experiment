@@ -32,7 +32,7 @@ int main(void)
 	}
 
 	/* Native initialize */
-	setDataDir("../../../Assets");
+	setDataDir("../../Assets");
 	native_init();
 	native_gl_init(width_screen,height_screen);
 
