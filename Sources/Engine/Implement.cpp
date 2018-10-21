@@ -14,7 +14,7 @@
 AAssetManager* assetManagerPtr;
 #endif
 
-const char* dataDirApp;
+std::string dataDirApp;
 int w_screen, h_screen;
 
 void native_init()
@@ -53,7 +53,7 @@ void setDataDir (const char* datadir)
 
 const char* getDataDir()
 {
-    return dataDirApp;
+    return dataDirApp.c_str();
 }
 
 #if defined (AndroidStudio)
