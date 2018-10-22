@@ -3,6 +3,7 @@
 //
 
 #include "stdafx.h"
+#include "OGLAdapter.h"
 #include "OGLNative.h"
 #include "OGLRender.h"
 #include "Engine/Utils/Speak.h"
@@ -10,12 +11,6 @@
 #include "Engine/Models/ModelType1.h"
 #include "Engine/Models/ModelType2.h"
 #include "Engine/Implement.h"
-
-#if defined (AndroidStudio)
-#include <GLES2/gl2.h>
-#elif defined (VisualStudio)
-#include "GL/glew.h"
-#endif
 
 ModelType *women1, *deer;
 const char *namaNfg1, *namaTga1;

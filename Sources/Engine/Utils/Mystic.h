@@ -5,15 +5,7 @@
 #ifndef OGLES_MYSTIC_H
 #define OGLES_MYSTIC_H
 
-#include "PlatformDefine.h"
-
-#if defined (AndroidStudio)
-#include <GLES2/gl2.h>
-
-#elif defined (VisualStudio) || defined (CodeBlocks)
 #include "OGLAdapter.h"
-
-#endif
 
 //Vector2
 
