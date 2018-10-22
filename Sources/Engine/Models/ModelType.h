@@ -12,12 +12,12 @@ public:
 	//ModelType();
 	//~ModelType();
   
-  void draw();
-  void scale(float scale_);
-  void rotationX(float rotate);
-  void rotationY(float rotate);
-  void rotationZ(float rotate);
-  void translation(Vector3 &transL);
+  virtual void draw();
+  virtual void scale(float scale_);
+  virtual void rotationX(float rotate);
+  virtual void rotationY(float rotate);
+  virtual void rotationZ(float rotate);
+  virtual void translation(Vector3 &transL);
 };
 
 
