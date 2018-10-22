@@ -5,7 +5,7 @@
 #ifndef OGLES_MYSTIC_H
 #define OGLES_MYSTIC_H
 
-#include "OGLAdapter.h"
+#include "Engine/OGL/OGLAdapter.h"
 
 //Vector2
 

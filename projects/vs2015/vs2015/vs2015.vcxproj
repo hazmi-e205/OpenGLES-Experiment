@@ -174,13 +174,13 @@ if exist $(OutDir)\glew32.dll  (
     <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\pngLoader.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\tgaLoader.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\Vertex.h" />
+    <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLAdapter.h" />
     <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLNative.h" />
     <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLRender.h" />
     <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLShader.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Utils\Mystic.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Utils\Speak.h" />
     <ClInclude Include="LeakChecker.h" />
-    <ClInclude Include="OGLAdapter.h" />
     <ClInclude Include="PlatformDefine.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
