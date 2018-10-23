@@ -31,9 +31,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OGLAdapter.h">
-      <Filter>Win32 Sources</Filter>
-    </ClInclude>
     <ClInclude Include="PlatformDefine.h">
       <Filter>Win32 Sources</Filter>
     </ClInclude>
@@ -90,6 +87,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Sources\Engine\Models\Resources\Vertex.h">
       <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLAdapter.h">
+      <Filter>OGL Sources\Engine\OGL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

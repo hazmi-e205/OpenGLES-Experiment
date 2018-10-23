@@ -3,23 +3,18 @@
 //
 
 #include "stdafx.h"
+#include "OGLAdapter.h"
 #include "OGLNative.h"
 #include "OGLRender.h"
 #include "Engine/Utils/Speak.h"
+#include "Engine/Models/ModelType.h"
 #include "Engine/Models/ModelType1.h"
 #include "Engine/Models/ModelType2.h"
 #include "Engine/Implement.h"
 
-#if defined (AndroidStudio)
-#include <GLES2/gl2.h>
-#elif defined (VisualStudio)
-#include "GL/glew.h"
-#endif
-
-ModelType1 *women1;
-ModelType2 *deer;
+ModelType *women1, *deer;
 const char *namaNfg1, *namaTga1;
-const char *namaNfg2, *namaTga2;
+//const char *namaNfg2, *namaTga2;
 Vector3 transLt1(-0.27f, 0.0f, 0.0f);
 Vector3 transLt2(0.27f, 0.0f, 0.0f);
 float scale1 = 0.4f;
@@ -45,8 +40,8 @@ bool setupGraphics(int w, int h) {
     women1->translation(transLt1);
     women1->scale(scale1);
 
-    namaNfg2 = "Woman2.nfg";
-    namaTga2 = "Woman2.tga";
+    //namaNfg2 = "Woman2.nfg";
+    //namaTga2 = "Woman2.tga";
     
     //women2 = new ModelType1(namaNfg2, namaTga2);
     //women2->translation(transLt2);

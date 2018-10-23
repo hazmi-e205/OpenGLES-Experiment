@@ -7,14 +7,14 @@
 #include "Engine/OGL/OGLNative.h"
 #include "Engine/Utils/Speak.h"
 #include "Engine/Implement.h"
-#include "Engine/Models/Resources/tgaLoader.h"
-#include "Engine/Models/Resources/nfgReader.h"
+#include "Engine/Models/Resources/pngLoader.h"
+#include "Engine/Models/Resources/objReader.h"
 
 #if defined (AndroidStudio)
 #include "AssetNative.h"
 #endif
 
-ModelType2::ModelType2(const char * file_nfg, const char * file_tga)
+ModelType2::ModelType2(const char * file_obj, const char * file_png)
 {
   ShaderObj = new OGLShader();
   ShaderObj->Init(model_vs, model_fs);
@@ -22,9 +22,9 @@ ModelType2::ModelType2(const char * file_nfg, const char * file_tga)
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glEnable(GL_DEPTH_TEST);
 
-  Say("NFG: %s", file_nfg);
-  Speak("TGA: %s", file_tga);
-  nfgReader *myModel = new nfgReader(file_nfg);
+  Say("OBJ: %s", file_obj);
+  Speak("PNG: %s", file_png);
+  objReader *myModel = new objReader(file_obj);
 
   glGenBuffers(1, &m_hVertexBuffer);
   glBindBuffer(GL_ARRAY_BUFFER, m_hVertexBuffer);
@@ -40,7 +40,7 @@ ModelType2::ModelType2(const char * file_nfg, const char * file_tga)
   //load texture
   glGenTextures(1, &textureID);
   glBindTexture(GL_TEXTURE_2D, textureID);
-  tgaLoader *myTexture = new tgaLoader(file_tga);
+  pngLoader *myTexture = new pngLoader(file_png);
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->getWidth(), myTexture->getHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->getTexture());
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);

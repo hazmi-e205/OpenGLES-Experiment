@@ -30,6 +30,7 @@ add_library( # Sets the name of the library.
 			 ../../../../Sources/Engine/Models/Resources/nfgReader.cpp
              ../../../../Sources/Engine/Models/ModelType.cpp
              ../../../../Sources/Engine/Models/ModelType1.cpp
+             ../../../../Sources/Engine/Models/ModelType2.cpp
              )
 
 # Specifies libraries CMake should link to your target library. You

@@ -3,7 +3,7 @@
 
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
-#include "Implement.h"
+#include "Engine/Implement.h"
 
 int main(void)
 {
@@ -32,7 +32,7 @@ int main(void)
 	}
 
 	/* Native initialize */
-	setDataDir("../../../Assets");
+	setDataDir("../../Assets");
 	native_init();
 	native_gl_init(width_screen,height_screen);
 
