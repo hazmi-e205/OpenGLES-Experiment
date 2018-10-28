@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "pngLoader.h"
 #include <string>
-#include "PlatformDefine.h"
 #include "Engine/Implement.h"
 #include "Engine/Utils/Speak.h"
+#include "PlatformDefine.h"
+#if defined(AndroidStudio)
+#include <AssetNative.h>
+#endif
 
 void pngLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
 {
@@ -87,17 +90,17 @@ void pngLoader::LoadUncompressedImage(char * pDest, char * pSrc, TGA_HEADER * pH
   }
 }
 
-pngLoader::pngLoader(const char * file_tga)
+pngLoader::pngLoader(const char * file_png)
 {
   FILE* f = NULL;
 #if defined (AndroidStudio)
-  f = asset_fopen(szFileName, "r");
+  f = asset_fopen(file_png, "r");
   if (f == NULL) {
     Problem("Load Internal: Model Texture (.tga) is not available on asset");
   }
 #endif
   if (f == NULL) {
-    std::string tga_src = std::string(getDataDir()) + "/" + file_tga;
+    std::string tga_src = std::string(getDataDir()) + "/" + file_png;
     f = fopen(tga_src.c_str(), "r");
     if (f == NULL) {
       Problem("Load External: Model Texture (.tga) is not available files directory");

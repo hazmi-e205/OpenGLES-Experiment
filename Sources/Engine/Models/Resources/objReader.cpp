@@ -2,9 +2,12 @@
 #include "objReader.h"
 #include <string>
 #include <string.h>
-#include "PlatformDefine.h"
 #include "Engine/Implement.h"
 #include "Engine/Utils/Speak.h"
+#include "PlatformDefine.h"
+#if defined(AndroidStudio)
+#include <AssetNative.h>
+#endif
 
 objReader::objReader(const char * file_obj)
 {

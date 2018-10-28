@@ -40,7 +40,7 @@ public:
   char* getTexture() { return textureBuffer; }
   short getWidth() { return width; };
   short getHeight() { return height; };
-  pngLoader(const char * file_tga);
+  pngLoader(const char * file_png);
   ~pngLoader();
 };
 

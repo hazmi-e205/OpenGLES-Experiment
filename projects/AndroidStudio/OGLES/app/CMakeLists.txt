@@ -27,7 +27,9 @@ add_library( # Sets the name of the library.
              ../../../../Sources/Engine/OGL/OGLRender.cpp
              ../../../../Sources/Engine/Models/Resources/Vertex.cpp
 			 ../../../../Sources/Engine/Models/Resources/tgaLoader.cpp
+			 ../../../../Sources/Engine/Models/Resources/pngLoader.cpp
 			 ../../../../Sources/Engine/Models/Resources/nfgReader.cpp
+             ../../../../Sources/Engine/Models/Resources/objReader.cpp
              ../../../../Sources/Engine/Models/ModelType.cpp
              ../../../../Sources/Engine/Models/ModelType1.cpp
              ../../../../Sources/Engine/Models/ModelType2.cpp
