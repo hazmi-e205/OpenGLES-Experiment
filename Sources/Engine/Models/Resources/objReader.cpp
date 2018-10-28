@@ -45,16 +45,39 @@ objReader::objReader(const char * file_obj)
     if (strcmp(lineHeader, "v") == 0)
     {
       Vector3 vertex;
-      fscanf(pFile, "%f %f %f\n", &vertex.x, &vertex.y, &vertex.z);
-      //vertices_of_model.push_back(vertex);
+      int matches = fscanf(pFile, "%f %f %f\n", &vertex.x, &vertex.y, &vertex.z);
+      if (matches != 3) {
+        Problem("File can't be read by our simple parser : Try exporting with other options <vertice>");
+        return;
+      }
+
+      vertices_of_model.push_back(vertex);
       vertex_num++;
     }
     else if (strcmp(lineHeader, "vt") == 0)
     {
       Vector2 uv;
-      fscanf(pFile, "%f %f\n", &uv.x, &uv.y);
-      //uv_of_model.push_back(uv);
+      int matches = fscanf(pFile, "%f %f\n", &uv.x, &uv.y);
+      if (matches != 2) {
+        Problem("File can't be read by our simple parser : Try exporting with other options <uv's>");
+        return;
+      }
+
+      uvs_of_model.push_back(uv);
       uv_num++;
+    }
+    else if (strcmp(lineHeader, "f") == 0) 
+    {
+      unsigned int vertexIndex[3];
+      int matches = fscanf(pFile, "%d/%*d/%*d %d/%*d/%*d %d/%*d/%*d\n", &vertexIndex[0], &vertexIndex[1], &vertexIndex[2]);
+      if (matches != 3) {
+        Problem("File can't be read by our simple parser : Try exporting with other options <indices>");
+        return;
+      }
+      indices_of_model.push_back(vertexIndex[0] - 1);
+      indices_of_model.push_back(vertexIndex[1] - 1);
+      indices_of_model.push_back(vertexIndex[2] - 1);
+      index_num += 3;
     }
   }
 }

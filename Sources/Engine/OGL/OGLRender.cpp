@@ -12,13 +12,13 @@
 #include "Engine/Models/ModelType2.h"
 #include "Engine/Implement.h"
 
-ModelType *women1, *deer;
+ModelType *women1, *women2;
 const char *namaNfg1, *namaTga1;
-//const char *namaNfg2, *namaTga2;
+const char *namaObj1, *namaPng1;
 Vector3 transLt1(-0.27f, 0.0f, 0.0f);
 Vector3 transLt2(0.27f, 0.0f, 0.0f);
 float scale1 = 0.4f;
-float scale2 = 0.4f;
+float scale2 = 0.11f;
 
 bool setupGraphics(int w, int h) {
 #if defined (AndroidStudio)
@@ -40,12 +40,12 @@ bool setupGraphics(int w, int h) {
     women1->translation(transLt1);
     women1->scale(scale1);
 
-    //namaNfg2 = "Woman2.nfg";
-    //namaTga2 = "Woman2.tga";
+    namaObj1 = "anime_charcter.obj";
+    namaPng1 = "anime_charcter.png";
     
-    //women2 = new ModelType1(namaNfg2, namaTga2);
-    //women2->translation(transLt2);
-    //women2->scale(scale2);
+    women2 = new ModelType2(namaObj1, namaPng1);
+    women2->translation(transLt2);
+    women2->scale(scale2);
 
     return true;
 }
@@ -57,13 +57,13 @@ void renderFrame() {
     women1->scale(scale1);
     women1->draw();
 
-    //women2->translation(transLt2);
-    //women2->scale(scale2);
-    //women2->draw();
+    women2->translation(transLt2);
+    women2->scale(scale2);
+    women2->draw();
 
     static float rot = 0.0f;
     women1->rotationY(rot);
-    //women2->rotationY(-rot);
+    women2->rotationY(-rot);
     rot += 0.01f;
 }
 

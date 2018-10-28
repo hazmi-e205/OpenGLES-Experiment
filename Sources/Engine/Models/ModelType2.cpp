@@ -28,7 +28,7 @@ ModelType2::ModelType2(const char * file_obj, const char * file_png)
 
   glGenBuffers(1, &m_hVertexBuffer);
   glBindBuffer(GL_ARRAY_BUFFER, m_hVertexBuffer);
-  glBufferData(GL_ARRAY_BUFFER, myModel->getLengthVetices() * sizeof(Vertex), myModel->getVertices(), GL_STATIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER, myModel->getLengthVetices() * sizeof(Vector3), myModel->getVertices(), GL_STATIC_DRAW);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
 
   glGenBuffers(1, &m_hIndexBuffer);
@@ -40,14 +40,14 @@ ModelType2::ModelType2(const char * file_obj, const char * file_png)
   //load texture
   glGenTextures(1, &textureID);
   glBindTexture(GL_TEXTURE_2D, textureID);
-  pngLoader *myTexture = new pngLoader(file_png);
-  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->getWidth(), myTexture->getHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->getTexture());
+  //pngLoader *myTexture = new pngLoader(file_png);
+  //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->getWidth(), myTexture->getHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->getTexture());
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-  delete myTexture;
+  //delete myTexture;
   delete myModel;
 
   modelScale.SetIdentity();
@@ -69,7 +69,7 @@ void ModelType2::draw() {
     if (ShaderObj->GetAttributes().position != -1)
     {
         glEnableVertexAttribArray(ShaderObj->GetAttributes().position);
-        glVertexAttribPointer(ShaderObj->GetAttributes().position, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (char*)0);
+        glVertexAttribPointer(ShaderObj->GetAttributes().position, 3, GL_FLOAT, GL_FALSE, sizeof(Vector3), (char*)0);
     }
 
     if (ShaderObj->GetUniforms().mvp != -1)
