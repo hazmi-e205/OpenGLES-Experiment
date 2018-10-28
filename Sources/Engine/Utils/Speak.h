@@ -15,10 +15,11 @@
 #define  Say(...)  __android_log_print(ANDROID_LOG_WARN,LOG_TAG,__VA_ARGS__)
 
 #elif defined (VisualStudio) || defined (CodeBlocks)
+#include <stdio.h>
 
-void Speak(const char* format, ...);
-void Problem(const char* format, ...);
-void Say(const char* format, ...);
+#define  Speak(myformat, ...)     printf("Speak   ==> " myformat "\n", __VA_ARGS__)
+#define  Problem(myformat, ...)   printf("Problem ==> " myformat "\n", __VA_ARGS__)
+#define  Say(myformat, ...)       printf("Say     ==> " myformat "\n", __VA_ARGS__)
 
 #endif
 
