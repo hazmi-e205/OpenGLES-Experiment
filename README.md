@@ -13,6 +13,7 @@ This project is OpenGLES2-based that available on Android NDK
 ### Libraries
 + GLFW (precompiled Win32 and Linux64)
 + GLEW (precompiled Win32 and Linux64)
++ libpng (work in progress)
 <br>Not works? you must build by yourself or download via apt-get (ubuntu user)
 
 
@@ -23,7 +24,7 @@ This project is OpenGLES2-based that available on Android NDK
 
 ### Supported Files Render
 + NFG (Vertice) & TGA (Textures)
-+ OBJ (Planning...)
++ OBJ (Vertice) & PNG (work in progress)
 
 by Hazmi E205
 <br>Please mention me if you copy any of my code :)
