@@ -18,6 +18,7 @@ void native_init();
 //OpenGLES2
 void native_gl_init(int width, int height);
 void native_gl_draw();
+void native_cleanup();
 void getScreen(int &width, int &height);
 float getAspectRatio();
 

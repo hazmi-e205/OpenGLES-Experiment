@@ -7,5 +7,6 @@
 
 bool setupGraphics(int w, int h);
 void renderFrame();
+void cleanup();
 
 #endif //OGLES_OGLRENDER_H

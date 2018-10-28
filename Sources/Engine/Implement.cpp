@@ -35,6 +35,11 @@ void native_gl_draw()
     renderFrame();
 }
 
+void native_cleanup()
+{
+  cleanup();
+}
+
 void getScreen(int &width, int &height)
 {
     width = w_screen;

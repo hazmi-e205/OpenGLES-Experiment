@@ -67,3 +67,9 @@ void renderFrame() {
     rot += 0.01f;
 }
 
+void cleanup()
+{
+  delete women1;
+  delete women2;
+}
+

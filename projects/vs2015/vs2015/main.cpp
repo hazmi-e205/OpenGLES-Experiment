@@ -51,7 +51,8 @@ int main(void)
 		glfwPollEvents();
 	}
 
-	glfwTerminate();
+  native_cleanup();
+  glfwTerminate();
   LeakCheck();
-	return 0;
+  return 0;
 }
