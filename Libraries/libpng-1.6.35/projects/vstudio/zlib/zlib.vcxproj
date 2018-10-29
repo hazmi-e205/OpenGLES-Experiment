@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\adler32.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\compress.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\crc32.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\deflate.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\infback.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\inffast.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\inflate.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\inftrees.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\trees.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\uncompr.c" />
-    <ClCompile Include="$(SolutionDir)\..\..\..\zlib-1.2.11\zutil.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\adler32.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\compress.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\crc32.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\deflate.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\infback.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\inffast.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\inflate.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\inftrees.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\trees.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\uncompr.c" />
+    <ClCompile Include="$(SolutionDir)\..\..\Libraries\zlib-1.2.11\zutil.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{60F89955-91C6-3A36-8000-13C592FEC2DF}</ProjectGuid>
