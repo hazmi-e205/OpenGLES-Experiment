@@ -94,8 +94,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Libraries\glew-2.1.0\lib\Win32;$(SolutionDir)\..\..\Libraries\glfw-3.2.1\lib\vs2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\Libraries\glew-2.1.0\lib\Win32;$(SolutionDir)\..\..\Libraries\glfw-3.2.1\lib\vs2015;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;zlib.lib;libpng16.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <PreventDllBinding>false</PreventDllBinding>
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>

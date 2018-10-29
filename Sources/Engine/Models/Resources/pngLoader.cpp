@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "pngLoader.h"
 #include <string>
+#include <png.h>
 #include "Engine/Implement.h"
 #include "Engine/Utils/Speak.h"
 #include "PlatformDefine.h"
@@ -8,146 +9,127 @@
 #include <AssetNative.h>
 #endif
 
-void pngLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
-{
-  int w = pHeader->width;
-  int h = pHeader->height;
-  int rowSize = w * pHeader->bits / 8;
-  bool bInverted = ((pHeader->descriptor & (1 << 5)) != 0);
-  char * pDestPtr = bInverted ? pDest + (h + 1) * rowSize : pDest;
-  int countPixels = 0;
-  int nPixels = w * h;
-
-  while (nPixels > countPixels)
-  {
-    unsigned char chunk = *pSrc++;
-    if (chunk < 128)
-    {
-      int chunkSize = chunk + 1;
-      for (int i = 0; i < chunkSize; i++)
-      {
-        if (bInverted && (countPixels % w) == 0)
-          pDestPtr -= 2 * rowSize;
-        *pDestPtr++ = pSrc[2];
-        *pDestPtr++ = pSrc[1];
-        *pDestPtr++ = pSrc[0];
-        pSrc += 3;
-        if (pHeader->bits != 24)
-          *pDestPtr++ = *pSrc++;
-        countPixels++;
-      }
-    }
-    else
-    {
-      int chunkSize = chunk - 127;
-      for (int i = 0; i < chunkSize; i++)
-      {
-        if (bInverted && (countPixels % w) == 0)
-          pDestPtr -= 2 * rowSize;
-        *pDestPtr++ = pSrc[2];
-        *pDestPtr++ = pSrc[1];
-        *pDestPtr++ = pSrc[0];
-        if (pHeader->bits != 24)
-          *pDestPtr++ = pSrc[3];
-        countPixels++;
-      }
-      pSrc += (pHeader->bits >> 3);
-    }
-  }
-}
-
-void pngLoader::LoadUncompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
-{
-  int w = pHeader->width;
-  int h = pHeader->height;
-  int rowSize = w * pHeader->bits / 8;
-  bool bInverted = ((pHeader->descriptor & (1 << 5)) != 0);
-  for (int i = 0; i < h; i++)
-  {
-    char * pSrcRow = pSrc +
-      (bInverted ? (h - i - 1) * rowSize : i * rowSize);
-    if (pHeader->bits == 24)
-    {
-      for (int j = 0; j < w; j++)
-      {
-        *pDest++ = pSrcRow[2];
-        *pDest++ = pSrcRow[1];
-        *pDest++ = pSrcRow[0];
-        pSrcRow += 3;
-      }
-    }
-    else
-    {
-      for (int j = 0; j < w; j++)
-      {
-        *pDest++ = pSrcRow[2];
-        *pDest++ = pSrcRow[1];
-        *pDest++ = pSrcRow[0];
-        *pDest++ = pSrcRow[3];
-        pSrcRow += 4;
-      }
-    }
-  }
-}
-
 pngLoader::pngLoader(const char * file_png)
 {
-  FILE* f = NULL;
+  FILE* fp = NULL;
 #if defined (AndroidStudio)
-  f = asset_fopen(file_png, "r");
-  if (f == NULL) {
-    Problem("Load Internal: Model Texture (.tga) is not available on asset");
+  fp = asset_fopen(file_png, "r");
+  if (fp == NULL) {
+    Problem("Load Internal: Model Texture (.png) is not available on asset");
   }
 #endif
-  if (f == NULL) {
-    std::string tga_src = std::string(getDataDir()) + "/" + file_png;
-    f = fopen(tga_src.c_str(), "r");
-    if (f == NULL) {
-      Problem("Load External: Model Texture (.tga) is not available files directory");
+  if (fp == NULL) {
+    std::string png_src = std::string(getDataDir()) + "/" + file_png;
+    fp = fopen(png_src.c_str(), "r");
+    if (fp == NULL) {
+      Problem("Load External: Model Texture (.png) is not available files directory");
       return;
     }
   }
 
-  TGA_HEADER header;
-  fread(&header, sizeof(header), 1, f);
+  png_structp png_ptr;
+  png_infop info_ptr;
+  unsigned int sig_read = 0;
+  int color_type, interlace_type;
 
-  fseek(f, 0, SEEK_END);
-  int fileLen = ftell(f);
-  fseek(f, sizeof(header) + header.identsize, SEEK_SET);
+  /* Create and initialize the png_struct
+  * with the desired error handler
+  * functions.  If you want to use the
+  * default stderr and longjump method,
+  * you can supply NULL for the last
+  * three parameters.  We also supply the
+  * the compiler header file version, so
+  * that we know if the application
+  * was compiled with a compatible version
+  * of the library.  REQUIRED
+  */
+  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING,
+    NULL, NULL, NULL);
 
-  if (header.imagetype != IT_COMPRESSED && header.imagetype != IT_UNCOMPRESSED)
-  {
-    fclose(f);
+  if (png_ptr == NULL) {
+    fclose(fp);
     return;
   }
 
-  if (header.bits != 24 && header.bits != 32)
-  {
-    fclose(f);
+  /* Allocate/initialize the memory
+  * for image information.  REQUIRED. */
+  info_ptr = png_create_info_struct(png_ptr);
+  if (info_ptr == NULL) {
+    fclose(fp);
+    png_destroy_read_struct(&png_ptr, NULL, NULL);
     return;
   }
 
-  int bufferSize = fileLen - sizeof(header) - header.identsize;
-  char * pBuffer = new char[bufferSize];
-  fread(pBuffer, 1, bufferSize, f);
-  fclose(f);
-
-  width = header.width;
-  height = header.height;
-
-  textureBuffer = new char[header.width * header.height * header.bits / 8];
-  
-  switch (header.imagetype)
-  {
-  case IT_UNCOMPRESSED:
-    LoadUncompressedImage(textureBuffer, pBuffer, &header);
-    break;
-  case IT_COMPRESSED:
-    LoadCompressedImage(textureBuffer, pBuffer, &header);
-    break;
+  /* Set error handling if you are
+  * using the setjmp/longjmp method
+  * (this is the normal method of
+  * doing things with libpng).
+  * REQUIRED unless you  set up
+  * your own error handlers in
+  * the png_create_read_struct()
+  * earlier.
+  */
+  if (setjmp(png_jmpbuf(png_ptr))) {
+    /* Free all of the memory associated
+    * with the png_ptr and info_ptr */
+    png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+    fclose(fp);
+    /* If we get here, we had a
+    * problem reading the file */
+    return;
   }
-  
-  delete[] pBuffer;
+
+  /* Set up the output control if
+  * you are using standard C streams */
+  png_init_io(png_ptr, fp);
+
+  /* If we have already
+  * read some of the signature */
+  png_set_sig_bytes(png_ptr, sig_read);
+
+  /*
+  * If you have enough memory to read
+  * in the entire image at once, and
+  * you need to specify only
+  * transforms that can be controlled
+  * with one of the PNG_TRANSFORM_*
+  * bits (this presently excludes
+  * dithering, filling, setting
+  * background, and doing gamma
+  * adjustment), then you can read the
+  * entire image (including pixels)
+  * into the info structure with this
+  * call
+  *
+  * PNG_TRANSFORM_STRIP_16 |
+  * PNG_TRANSFORM_PACKING  forces 8 bit
+  * PNG_TRANSFORM_EXPAND forces to
+  *  expand a palette into RGB
+  */
+  png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_STRIP_16 | PNG_TRANSFORM_PACKING | PNG_TRANSFORM_EXPAND, NULL);
+
+  int bit_depth;
+  png_get_IHDR(png_ptr, info_ptr, &width, &height, &bit_depth, &color_type,
+    &interlace_type, NULL, NULL);
+
+  unsigned int row_bytes = png_get_rowbytes(png_ptr, info_ptr);
+  textureBuffer = (unsigned char*)malloc(row_bytes * height);
+
+  png_bytepp row_pointers = png_get_rows(png_ptr, info_ptr);
+
+  for (int i = 0; i < height; i++) {
+    // note that png is ordered top to
+    // bottom, but OpenGL expect it bottom to top
+    // so the order or swapped
+    memcpy(textureBuffer + (row_bytes * (height - 1 - i)), row_pointers[i], row_bytes);
+  }
+
+  /* Clean up after the read,
+  * and free any memory allocated */
+  png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+
+  /* Close the file */
+  fclose(fp);
 }
 
 
