@@ -13,14 +13,14 @@ pngLoader::pngLoader(const char * file_png)
 {
   FILE* fp = NULL;
 #if defined (AndroidStudio)
-  fp = asset_fopen(file_png, "r");
+  fp = asset_fopen(file_png, "rb");
   if (fp == NULL) {
     Problem("Load Internal: Model Texture (.png) is not available on asset");
   }
 #endif
   if (fp == NULL) {
     std::string png_src = std::string(getDataDir()) + "/" + file_png;
-    fp = fopen(png_src.c_str(), "r");
+    fp = fopen(png_src.c_str(), "rb");
     if (fp == NULL) {
       Problem("Load External: Model Texture (.png) is not available files directory");
       return;
