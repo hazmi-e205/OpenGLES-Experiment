@@ -1,0 +1,49 @@
+# Blender MTL File: 'Anime_charcter.blend'
+# Material Count: 4
+
+newmtl 1m4g3n-texura-An1we.png
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.050000 0.050000 0.050000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 0
+map_Kd .
+map_d anime_charcter.png
+
+newmtl 1m4g3n-texura-An1we.png_NONE
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.050000 0.050000 0.050000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 0
+map_Kd anime_charcter.png
+map_d anime_charcter.png
+
+newmtl 1m4g3n-texura-An1we.png_anime.png
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.050000 0.050000 0.050000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 0
+map_Kd anime_charcter.png
+map_d anime_charcter.png
+
+newmtl Borde
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.348235 0.147451 0.207059
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 0
+map_Kd .
