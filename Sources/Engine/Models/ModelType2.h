@@ -42,7 +42,7 @@ private:
     "}";
 
   Matrix modelScale, modelRotationX, modelRotationY, modelRotationZ, modelTranslation, model_mvp;
-  GLuint m_hVertexBuffer, m_hIndexBuffer, textureID;
+  GLuint m_hVertexBuffer, m_hUVBuffer, m_hIndexBuffer, textureID;
   unsigned int m_noIndices;
   OGLShader *ShaderObj;
 

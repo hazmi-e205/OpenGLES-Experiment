@@ -31,6 +31,8 @@ objReader::objReader(const char * file_obj)
   int vertex_num = 0;
   int uv_num = 0;
   int index_num = 0;
+  int indexUV_num = 0;
+  std::vector<Vector2> uvs_temp;
   while (1)
   {
     char lineHeader[128];
@@ -41,6 +43,7 @@ objReader::objReader(const char * file_obj)
       n_indices = index_num;
       Speak("Vertice: %d", vertex_num);
       Say("UV's: %d", uv_num);
+      Say("UV Indices: %d", indexUV_num);
       Speak("Indices: %d", index_num);
       break; // EOF = End Of File. Quit the loop.
     }
@@ -66,14 +69,16 @@ objReader::objReader(const char * file_obj)
         return;
       }
 
-      uvs_of_model.push_back(uv);
+      uvs_temp.push_back(uv);
+      //uvs_of_model.push_back(uv);
+      //uvs_of_model.push_back(Vector2(0.0f, 0.0f));
       uv_num++;
     }
     else if (strcmp(lineHeader, "f") == 0) 
     {
-      unsigned int vertexIndex[3];
-      int matches = fscanf(pFile, "%d/%*d/%*d %d/%*d/%*d %d/%*d/%*d\n", &vertexIndex[0], &vertexIndex[1], &vertexIndex[2]);
-      if (matches != 3) {
+      unsigned int vertexIndex[3], uvIndex[3];
+      int matches = fscanf(pFile, "%d/%d/%*d %d/%d/%*d %d/%d/%*d\n", &vertexIndex[0], &uvIndex[0], &vertexIndex[1], &uvIndex[1], &vertexIndex[2], &uvIndex[2]);
+      if (matches != 6) {
         Problem("File can't be read by our simple parser : Try exporting with other options <indices>");
         return;
       }
@@ -81,7 +86,19 @@ objReader::objReader(const char * file_obj)
       indices_of_model.push_back(vertexIndex[1] - 1);
       indices_of_model.push_back(vertexIndex[2] - 1);
       index_num += 3;
+
+      uvs_indices.push_back(uvIndex[0] - 1);
+      uvs_indices.push_back(uvIndex[1] - 1);
+      uvs_indices.push_back(uvIndex[2] - 1);
+      indexUV_num += 3;
+
+      uvs_of_model.push_back(Vector2(0.0f, 0.0f));
     }
+  }
+  //reaarange
+  for (unsigned int idx = 0; idx < uvs_of_model.size(); idx++)
+  {
+    uvs_of_model.at(idx) = uvs_temp.at(uvs_indices.at(idx));
   }
 }
 

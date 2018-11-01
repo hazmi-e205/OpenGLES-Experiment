@@ -31,6 +31,11 @@ ModelType2::ModelType2(const char * file_obj, const char * file_png)
   glBufferData(GL_ARRAY_BUFFER, myModel->getLengthVetices() * sizeof(Vector3), myModel->getVertices(), GL_STATIC_DRAW);
   glBindBuffer(GL_ARRAY_BUFFER, 0);
 
+  glGenBuffers(1, &m_hUVBuffer);
+  glBindBuffer(GL_ARRAY_BUFFER, m_hUVBuffer);
+  glBufferData(GL_ARRAY_BUFFER, myModel->getLengthUV() * sizeof(Vector2), myModel->getUV(), GL_STATIC_DRAW);
+  glBindBuffer(GL_ARRAY_BUFFER, 0);
+
   glGenBuffers(1, &m_hIndexBuffer);
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_hIndexBuffer);
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, myModel->getLengthIndices() * sizeof(GLuint), myModel->getIndices(), GL_STATIC_DRAW);
@@ -82,10 +87,11 @@ void ModelType2::draw() {
         glUniformMatrix4fv(ShaderObj->GetUniforms().mvp, 1, GL_FALSE, *model_mvp.m);
     }
 
+    glBindBuffer(GL_ARRAY_BUFFER, m_hUVBuffer);
     if (ShaderObj->GetAttributes().uv != -1)
     {
         glEnableVertexAttribArray(ShaderObj->GetAttributes().uv);
-        glVertexAttribPointer(ShaderObj->GetAttributes().uv, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (char*)0 + sizeof(Vertex::position));
+        glVertexAttribPointer(ShaderObj->GetAttributes().uv, 2, GL_FLOAT, GL_FALSE, sizeof(Vector2), (char*)0);
     }
 
     glBindTexture(GL_TEXTURE_2D, textureID);
@@ -95,6 +101,7 @@ void ModelType2::draw() {
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_hIndexBuffer);
     glDrawElements(GL_TRIANGLES, m_noIndices, GL_UNSIGNED_INT, 0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }

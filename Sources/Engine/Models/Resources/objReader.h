@@ -9,6 +9,7 @@ private:
   std::vector<Vector3> vertices_of_model;
   std::vector<GLuint> indices_of_model;
   std::vector<Vector2> uvs_of_model;
+  std::vector<GLuint> uvs_indices;
   unsigned int n_vertices, n_indices;
 
 public:
