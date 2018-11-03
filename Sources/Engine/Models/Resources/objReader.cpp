@@ -69,8 +69,8 @@ objReader::objReader(const char * file_obj)
         return;
       }
 
-      uvs_temp.push_back(uv);
-      //uvs_of_model.push_back(uv);
+      //uvs_temp.push_back(uv);
+      uvs_of_model.push_back(uv);
       //uvs_of_model.push_back(Vector2(0.0f, 0.0f));
       uv_num++;
     }
@@ -92,14 +92,14 @@ objReader::objReader(const char * file_obj)
       uvs_indices.push_back(uvIndex[2] - 1);
       indexUV_num += 3;
 
-      uvs_of_model.push_back(Vector2(0.0f, 0.0f));
+      //uvs_of_model.push_back(Vector2(0.0f, 0.0f));
     }
   }
   //reaarange
-  for (unsigned int idx = 0; idx < uvs_of_model.size(); idx++)
+  /*for (unsigned int idx = 0; idx < uvs_of_model.size(); idx++)
   {
     uvs_of_model.at(idx) = uvs_temp.at(uvs_indices.at(idx));
-  }
+  }*/
 }
 
 
