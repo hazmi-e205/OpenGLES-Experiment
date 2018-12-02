@@ -6,7 +6,6 @@
 #include "Engine/OGL/OGLNative.h"
 #include "Engine/Utils/Speak.h"
 #include "Engine/Implement.h"
-#include "Engine/Models/Resources/tgaLoader.h"
 #include "Engine/Models/Resources/nfgReader.h"
 #include "Engine/Models/Textures/TextureLoader.h"
 
