@@ -9,10 +9,6 @@
 #include "Engine/Models/Resources/objReader.h"
 #include "Engine/Models/Textures/TextureLoader.h"
 
-#if defined (AndroidStudio)
-#include "AssetNative.h"
-#endif
-
 ModelType2::ModelType2(const char * file_obj, const char * file_png)
 {
   ShaderObj = new OGLShader();

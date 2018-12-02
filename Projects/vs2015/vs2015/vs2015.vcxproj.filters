@@ -40,9 +40,6 @@
     <ClInclude Include="PlatformDefine.h">
       <Filter>Win32 Sources</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Win32 Sources</Filter>
-    </ClInclude>
     <ClInclude Include="LeakChecker.h">
       <Filter>Win32 Sources</Filter>
     </ClInclude>
