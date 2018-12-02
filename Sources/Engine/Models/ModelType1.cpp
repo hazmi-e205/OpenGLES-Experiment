@@ -54,16 +54,6 @@ ModelType1::ModelType1(const char * file_nfg, const char * file_tga)
   model_mvp.SetIdentity();
 }
 
-/*
-ModelType::~ModelType()
-{
-}
-
-ModelType::ModelType()
-{
-}
-*/
-
 ModelType1::~ModelType1()
 {
 }

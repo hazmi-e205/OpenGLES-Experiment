@@ -77,6 +77,16 @@
 #include <memory.h>
 #include <assert.h>
 #include <stdarg.h>
+#include <string>
+
+/*Platform Check*/
+#include "Engine/Implement.h"
+#include "Engine/Utils/Speak.h"
+
+/*Header for Asset Android*/
+#if defined (AndroidStudio)
+#include "AssetNative.h"
+#endif
 
 #ifndef _MSC_VER
   #ifdef __cplusplus
@@ -174,7 +184,24 @@ static stbi_uc *hdr_to_ldr(float   *data, int x, int y, int comp);
 #ifndef STBI_NO_STDIO
 unsigned char *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
 {
-   FILE *f = fopen(filename, "rb");
+   FILE *f = NULL;
+   
+#if defined (AndroidStudio)
+   f = asset_fopen(filename, "r");
+   if (f == NULL) {
+	   Problem("Load Internal: Model Texture (%s) is not available on asset", filename);
+   }
+#endif
+   if (f == NULL) {
+	   std::string file_src = std::string(getDataDir()) + "/" + filename;
+
+	   f = fopen(file_src.c_str(), "rb");
+	   if (f == nullptr) {
+		   Problem("Load External: Model Texture (%s) is not available files directory", filename);
+		   return epuc("can't fopen", "Unable to open file");
+	   }
+   }
+   
    unsigned char *result;
    if (!f) return epuc("can't fopen", "Unable to open file");
    result = stbi_load_from_file(f,x,y,comp,req_comp);

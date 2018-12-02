@@ -174,11 +174,11 @@
     <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\SOIL.c">
       <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stb_image_aug.c">
-      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\TextureLoader.cpp">
       <Filter>OGL Sources\Engine\Models\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stb_image_aug.cpp">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

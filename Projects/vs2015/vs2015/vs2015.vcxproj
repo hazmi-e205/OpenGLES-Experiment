@@ -208,7 +208,7 @@ if exist $(OutDir)\glew32.dll  (
     <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\image_DXT.c" />
     <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\image_helper.c" />
     <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\SOIL.c" />
-    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stb_image_aug.c" />
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stb_image_aug.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\TextureLoader.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLNative.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLRender.cpp" />
