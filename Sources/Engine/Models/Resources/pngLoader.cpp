@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "pngLoader.h"
 #include <string>
 #include <png.h>
@@ -117,7 +116,7 @@ pngLoader::pngLoader(const char * file_png)
 
   png_bytepp row_pointers = png_get_rows(png_ptr, info_ptr);
 
-  for (int i = 0; i < height; i++) {
+  for (unsigned int i = 0; i < height; i++) {
     // note that png is ordered top to
     // bottom, but OpenGL expect it bottom to top
     // so the order or swapped

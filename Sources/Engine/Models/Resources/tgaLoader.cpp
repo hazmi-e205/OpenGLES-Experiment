@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "tgaLoader.h"
 #include <string>
 #include "Engine/Implement.h"

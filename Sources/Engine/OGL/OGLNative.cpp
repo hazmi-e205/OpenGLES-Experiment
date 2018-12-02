@@ -2,7 +2,6 @@
 // Created by hazmi.arifin on 5/12/2018.
 //
 
-#include "stdafx.h"
 #include "OGLNative.h"
 #include "Engine/Utils/Speak.h"
 #include "Engine/Implement.h"

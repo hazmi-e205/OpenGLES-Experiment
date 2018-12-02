@@ -2,7 +2,6 @@
 // Created by hazmi.arifin on 5/2/2018.
 //
 
-#include "stdafx.h"
 #include <stdio.h>
 #include <string>
 #include "Implement.h"

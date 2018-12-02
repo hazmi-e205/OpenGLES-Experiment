@@ -26,15 +26,18 @@
     <Filter Include="OGL Sources\Engine\Models\Resources">
       <UniqueIdentifier>{700d6200-10d2-4e7d-b81c-feb10ef57797}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OGL Sources\Engine\Models\Textures">
+      <UniqueIdentifier>{049a43e8-de66-4af2-8d22-6696f22dc189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OGL Sources\Engine\Models\Textures\SOIL">
+      <UniqueIdentifier>{edc89645-019c-484e-a2c6-3443561acbb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlatformDefine.h">
-      <Filter>Win32 Sources</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
       <Filter>Win32 Sources</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
@@ -91,12 +94,30 @@
     <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLAdapter.h">
       <Filter>OGL Sources\Engine\OGL</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\SOIL\image_DXT.h">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\SOIL\image_helper.h">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\SOIL\SOIL.h">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stb_image_aug.h">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stbi_DDS_aug.h">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stbi_DDS_aug_c.h">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\TextureLoader.h">
+      <Filter>OGL Sources\Engine\Models\Textures</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Win32 Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
       <Filter>Win32 Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Engine\Implement.cpp">
@@ -143,6 +164,21 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Engine\Models\Resources\nfgReader.cpp">
       <Filter>OGL Sources\Engine\Models\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\image_DXT.c">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\image_helper.c">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\SOIL.c">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stb_image_aug.c">
+      <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\TextureLoader.cpp">
+      <Filter>OGL Sources\Engine\Models\Textures</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "nfgReader.h"
 #include <string>
 #include "Engine/Implement.h"

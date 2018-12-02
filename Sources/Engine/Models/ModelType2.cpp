@@ -2,7 +2,6 @@
 // Created by hazmi.arifin on 5/14/2018.
 //
 
-#include "stdafx.h"
 #include "ModelType2.h"
 #include "Engine/OGL/OGLNative.h"
 #include "Engine/Utils/Speak.h"

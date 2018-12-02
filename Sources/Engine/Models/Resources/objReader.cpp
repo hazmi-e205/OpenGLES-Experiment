@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "objReader.h"
 #include <string>
 #include <string.h>

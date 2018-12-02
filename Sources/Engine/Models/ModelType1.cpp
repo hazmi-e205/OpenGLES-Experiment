@@ -2,13 +2,13 @@
 // Created by hazmi.arifin on 5/14/2018.
 //
 
-#include "stdafx.h"
 #include "ModelType1.h"
 #include "Engine/OGL/OGLNative.h"
 #include "Engine/Utils/Speak.h"
 #include "Engine/Implement.h"
 #include "Engine/Models/Resources/tgaLoader.h"
 #include "Engine/Models/Resources/nfgReader.h"
+#include "Engine/Models/Textures/TextureLoader.h"
 
 ModelType1::ModelType1(const char * file_nfg, const char * file_tga)
 {
@@ -36,7 +36,7 @@ ModelType1::ModelType1(const char * file_nfg, const char * file_tga)
   //load texture
   glGenTextures(1, &textureID);
   glBindTexture(GL_TEXTURE_2D, textureID);
-  tgaLoader *myTexture = new tgaLoader(file_tga);
+  TextureLoader *myTexture = new TextureLoader(file_tga);
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, myTexture->getWidth(), myTexture->getHeight(), 0, GL_RGB, GL_UNSIGNED_BYTE, myTexture->getTexture());
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);

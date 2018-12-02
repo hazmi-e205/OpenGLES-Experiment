@@ -31,15 +31,16 @@ private:
             "gl_Position = posL;\n"
             "}";
 
-    const char* model_fs = ""
-            "precision mediump float;\n"
-            "varying vec4 v_color;\n"
-            "uniform sampler2D u_texture;\n"
-            "varying vec2 v_uv;\n"
-            "void main()\n"
-            "{\n"
-            "gl_FragColor=texture2D(u_texture,v_uv);\n"
-            "}";
+	const char* model_fs = ""
+		"precision mediump float;\n"
+		"varying vec4 v_color;\n"
+		"uniform sampler2D u_texture;\n"
+		"varying vec2 v_uv;\n"
+		"void main()\n"
+		"{\n"
+		"vec2 new_v_uv = vec2(v_uv.x, 1.0f-v_uv.y);\n" //invert via glsl for now
+		"gl_FragColor=texture2D(u_texture,new_v_uv);\n"
+		"}";
 
     Matrix modelScale, modelRotationX, modelRotationY, modelRotationZ, modelTranslation, model_mvp;
     GLuint m_hVertexBuffer, m_hIndexBuffer, textureID;

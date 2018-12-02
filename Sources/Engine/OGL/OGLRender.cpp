@@ -2,7 +2,6 @@
 // Created by hazmi.arifin on 5/26/2018.
 //
 
-#include "stdafx.h"
 #include "OGLAdapter.h"
 #include "OGLNative.h"
 #include "OGLRender.h"
