@@ -26,10 +26,13 @@ add_library( # Sets the name of the library.
              ../../../../Sources/Engine/OGL/OGLShader.cpp
              ../../../../Sources/Engine/OGL/OGLRender.cpp
              ../../../../Sources/Engine/Models/Resources/Vertex.cpp
-			 ../../../../Sources/Engine/Models/Resources/tgaLoader.cpp
-			 ../../../../Sources/Engine/Models/Resources/pngLoader.cpp
 			 ../../../../Sources/Engine/Models/Resources/nfgReader.cpp
              ../../../../Sources/Engine/Models/Resources/objReader.cpp
+			 ../../../../Sources/Engine/Models/Textures/TextureLoader.cpp
+			 ../../../../Sources/Engine/Models/Textures/SOIL/SOIL.c
+			 ../../../../Sources/Engine/Models/Textures/SOIL/image_DXT.c
+			 ../../../../Sources/Engine/Models/Textures/SOIL/image_helper.c
+			 ../../../../Sources/Engine/Models/Textures/SOIL/stb_image_aug.cpp
              ../../../../Sources/Engine/Models/ModelType.cpp
              ../../../../Sources/Engine/Models/ModelType1.cpp
              ../../../../Sources/Engine/Models/ModelType2.cpp
