@@ -18,18 +18,29 @@
 /*Check Platform*/
 #include "PlatformDefine.h"
 
-#ifdef WIN32
+#ifdef _WIN64
+	#define WIN64_LEAN_AND_MEAN
+	#include <windows.h>
+	#include <wingdi.h>
+	#include "Engine/OGL/OGLAdapter.h"
+#elif defined _WIN32
 	#define WIN32_LEAN_AND_MEAN
 	#include <windows.h>
 	#include <wingdi.h>
-	#include "Engine\OGL\OGLAdapter.h"
+	#include "Engine/OGL/OGLAdapter.h"
 #elif defined(__APPLE__) || defined(__APPLE_CC__)
-	//I can't test this Apple stuff!
+	/*	I can't test this Apple stuff!	*/
 	#include <OpenGL/gl.h>
 	#include <Carbon/Carbon.h>
 	#define APIENTRY
-#elif defined (AndroidStudio)
+#elif defined(__ANDROID__)
 	#include "Engine/OGL/OGLAdapter.h"
+	#define APIENTRY
+#elif defined(__EMSCRIPTEN__)
+	#include <GL/gl.h>
+#else
+	#include <GL/gl.h>
+	#include <GL/glx.h>
 #endif
 
 
@@ -81,14 +92,8 @@ int query_DXT_capability( void );
 #define SOIL_RGBA_S3TC_DXT1		0x83F1
 #define SOIL_RGBA_S3TC_DXT3		0x83F2
 #define SOIL_RGBA_S3TC_DXT5		0x83F3
-
-#if defined (AndroidStudio)
-#define soilGlCompressedTexImage2D glCompressedTexImage2D
-#else
 typedef void (APIENTRY * P_SOIL_GLCOMPRESSEDTEXIMAGE2DPROC) (GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const GLvoid * data);
 P_SOIL_GLCOMPRESSEDTEXIMAGE2DPROC soilGlCompressedTexImage2D = NULL;
-#endif
-
 unsigned int SOIL_direct_load_DDS(
 		const char *filename,
 		unsigned int reuse_texture_ID,
@@ -1351,11 +1356,7 @@ unsigned int
 			check_for_GL_errors( "GL_TEXTURE_WRAP_*" );
 		} else
 		{
-#if defined (AndroidStudio)
-			unsigned int clamp_mode = GL_CLAMP_TO_EDGE;
-#else
-			unsigned int clamp_mode = GL_CLAMP;
-#endif
+			unsigned int clamp_mode = SOIL_CLAMP_TO_EDGE;
 			glTexParameteri( opengl_texture_type, GL_TEXTURE_WRAP_S, clamp_mode );
 			glTexParameteri( opengl_texture_type, GL_TEXTURE_WRAP_T, clamp_mode );
 			if( opengl_texture_type == SOIL_TEXTURE_CUBE_MAP )
@@ -1821,11 +1822,7 @@ unsigned int SOIL_direct_load_DDS_from_memory(
 			glTexParameteri( opengl_texture_type, SOIL_TEXTURE_WRAP_R, GL_REPEAT );
 		} else
 		{
-#if defined (AndroidStudio)
-			unsigned int clamp_mode = GL_CLAMP_TO_EDGE;
-#else
-			unsigned int clamp_mode = GL_CLAMP;
-#endif
+			unsigned int clamp_mode = SOIL_CLAMP_TO_EDGE;
 			glTexParameteri( opengl_texture_type, GL_TEXTURE_WRAP_S, clamp_mode );
 			glTexParameteri( opengl_texture_type, GL_TEXTURE_WRAP_T, clamp_mode );
 			glTexParameteri( opengl_texture_type, SOIL_TEXTURE_WRAP_R, clamp_mode );
@@ -1894,6 +1891,9 @@ int query_NPOT_capability( void )
 		if(
 			(NULL == strstr( (char const*)glGetString( GL_EXTENSIONS ),
 				"GL_ARB_texture_non_power_of_two" ) )
+		&&
+			(NULL == strstr( (char const*)glGetString( GL_EXTENSIONS ),
+				"GL_OES_texture_npot" ) )
 			)
 		{
 			/*	not there, flag the failure	*/
@@ -1949,6 +1949,9 @@ int query_cubemap_capability( void )
 		&&
 			(NULL == strstr( (char const*)glGetString( GL_EXTENSIONS ),
 				"GL_EXT_texture_cube_map" ) )
+		#ifdef GL_ES_VERSION_2_0
+		&& (0) /* GL ES 2.0 supports cubemaps, always enable */
+		#endif
 			)
 		{
 			/*	not there, flag the failure	*/
@@ -2009,6 +2012,8 @@ int query_DXT_capability( void )
 				CFRelease( bundleURL );
 				CFRelease( extensionName );
 				CFRelease( bundle );
+			#elif defined(__ANDROID__) || defined(__EMSCRIPTEN__)
+				ext_addr = (P_SOIL_GLCOMPRESSEDTEXIMAGE2DPROC)(glCompressedTexImage2D);
 			#else
 				ext_addr = (P_SOIL_GLCOMPRESSEDTEXIMAGE2DPROC)
 						glXGetProcAddressARB

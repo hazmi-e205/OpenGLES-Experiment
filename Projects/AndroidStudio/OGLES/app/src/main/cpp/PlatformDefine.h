@@ -6,5 +6,6 @@
 #define OGLES_PLATFORMDEFINE_H
 
 #define AndroidStudio
+#define __ANDROID__
 
 #endif //OGLES_PLATFORMDEFINE_H
