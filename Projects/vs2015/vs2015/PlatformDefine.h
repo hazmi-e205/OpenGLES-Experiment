@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef WIN32
+#if defined (WIN32) || defined (_WIN32) || defined (WIN64) || defined (_WIN64)
 
 #define VisualStudio
 #define width_screen 960
