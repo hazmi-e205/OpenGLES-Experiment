@@ -1,9 +1,6 @@
 #include "TextureLoader.h"
 #include "SOIL/SOIL.h"
 #include "Engine/Utils/Speak.h"
-#include "Engine/Implement.h"
-#include "PlatformDefine.h"
-#include <string>
 
 TextureLoader::TextureLoader(const char * TextureFileName, TextureMode textureMode)
 {

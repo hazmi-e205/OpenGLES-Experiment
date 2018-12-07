@@ -9,7 +9,7 @@
 #include "Engine/Models/ModelType.h"
 #include "Engine/Models/ModelType1.h"
 #include "Engine/Models/ModelType2.h"
-#include "Engine/Implement.h"
+#include "Implement.h"
 
 ModelType *women1, *women2;
 const char *namaNfg1, *namaTga1;

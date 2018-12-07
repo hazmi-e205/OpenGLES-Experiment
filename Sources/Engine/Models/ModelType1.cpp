@@ -5,7 +5,7 @@
 #include "ModelType1.h"
 #include "Engine/OGL/OGLNative.h"
 #include "Engine/Utils/Speak.h"
-#include "Engine/Implement.h"
+#include "Implement.h"
 #include "Engine/Models/Resources/nfgReader.h"
 #include "Engine/Models/Textures/TextureLoader.h"
 
