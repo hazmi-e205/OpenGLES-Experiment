@@ -4,6 +4,12 @@
 
 #include "Engine.h"
 
+#if defined(AndroidStudio)
+#include "Engine/Platform/Android/PlatformAndroid.h"
+#elif defined(VisualStudio)
+#include "Engine/Platform/Win32/PlatformWin32.h"
+#endif
+
 bool Engine::isValid() {
     if (myEngine != nullptr)
         return true;
@@ -13,16 +19,19 @@ bool Engine::isValid() {
 
 Engine *Engine::Get() {
     if (!isValid())
-        Create();
+        myEngine = new Engine();
 
     return myEngine;
 }
 
-void Engine::Create() {
-    if (myEngine == nullptr)
-        myEngine = new Engine();
-}
-
 Platform *Engine::GetPlatform() {
-    return Platform::Get();
+    if (myPlatform == nullptr)
+    {
+#if defined(AndroidStudio)
+        myPlatform = new PlatformAndroid();
+#elif defined(VisualStudio)
+        myPlatform = new PlatformWin32();
+#endif
+    }
+    return myPlatform;
 }

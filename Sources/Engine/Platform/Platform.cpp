@@ -4,14 +4,4 @@
 
 #include "Platform.h"
 
-Platform *Platform::Get() {
-    return nullptr;
-}
 
-bool Platform::isValid() {
-    return false;
-}
-
-void Platform::Create() {
-
-}

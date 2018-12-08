@@ -12,9 +12,9 @@
 class Engine {
 private:
     Engine *myEngine;
+    Platform *myPlatform;
 
 public:
-    void Create();
     bool isValid();
     Engine *Get();
     Platform *GetPlatform();

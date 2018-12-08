@@ -5,11 +5,12 @@
 #ifndef OGLES_PLATFORM_H
 #define OGLES_PLATFORM_H
 
+#include "PlatformDefine.h"
+
+
+
 class Platform {
-public:
-    virtual void Create();
-    virtual bool isValid();
-    static Platform *Get();
+
 };
 
 

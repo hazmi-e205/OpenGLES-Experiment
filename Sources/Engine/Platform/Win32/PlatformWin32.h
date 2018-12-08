@@ -2,21 +2,19 @@
 // Created by Hazmi Amalul Arifin on 08/12/2018.
 //
 
-#ifndef OGLES_ENGINE_H
-#define OGLES_ENGINE_H
+#ifndef OGLES_PLATFORM_WIN32_H
+#define OGLES_PLATFORM_WIN32_H
 
-#define MyEngine Engine::Get()
+#include <Engine/Platform/Platform.h>
 
-class Engine {
+class PlatformWin32 : public Platform {
 private:
-    Engine *myEngine;
+
 
 public:
-    void Create();
-    bool isValid();
-    Engine *Get();
-
+    PlatformWin32();
+    ~PlatformWin32();
 };
 
 
-#endif //OGLES_ENGINE_H
+#endif //OGLES_PLATFORM_WIN32_H
