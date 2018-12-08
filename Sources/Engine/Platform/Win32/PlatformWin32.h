@@ -5,8 +5,6 @@
 #ifndef OGLES_ENGINE_H
 #define OGLES_ENGINE_H
 
-#include "Engine/Platform/Platform.h"
-
 #define MyEngine Engine::Get()
 
 class Engine {
@@ -17,7 +15,7 @@ public:
     void Create();
     bool isValid();
     Engine *Get();
-    Platform *GetPlatform();
+
 };
 
 

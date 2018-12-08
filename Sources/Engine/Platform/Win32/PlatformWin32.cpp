@@ -22,7 +22,3 @@ void Engine::Create() {
     if (myEngine == nullptr)
         myEngine = new Engine();
 }
-
-Platform *Engine::GetPlatform() {
-    return Platform::Get();
-}
