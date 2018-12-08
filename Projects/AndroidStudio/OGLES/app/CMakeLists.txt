@@ -18,11 +18,11 @@ add_library( # Sets the name of the library.
 
              # Provides a relative path to your source file(s).
              src/main/cpp/JNIBridge.cpp
-             src/main/cpp/AssetNative.cpp
              ../../../../Sources/Implement.cpp
              ../../../../Sources/Engine/Engine.cpp
              ../../../../Sources/Engine/Platform/Platform.cpp
              ../../../../Sources/Engine/Platform/Android/PlatformAndroid.cpp
+             ../../../../Sources/Engine/Platform/Android/AssetNative.cpp
              ../../../../Sources/Engine/Utils/Mystic.cpp
              ../../../../Sources/Engine/Utils/Speak.cpp
              ../../../../Sources/Engine/OGL/OGLNative.cpp
