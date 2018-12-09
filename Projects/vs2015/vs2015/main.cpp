@@ -3,7 +3,8 @@
 
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
-#include "Engine/Implement.h"
+#include "Implement.h"
+#include "Engine/Platform/Win32/ImplementWin32.h"
 #include "LeakChecker.h"
 
 int main(void)

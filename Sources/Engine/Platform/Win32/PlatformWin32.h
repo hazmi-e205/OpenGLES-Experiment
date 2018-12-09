@@ -2,19 +2,18 @@
 // Created by Hazmi Amalul Arifin on 08/12/2018.
 //
 
-#ifndef OGLES_PLATFORM_ANDROID_H
-#define OGLES_PLATFORM_ANDROID_H
+#ifndef OGLES_PLATFORM_WIN32_H
+#define OGLES_PLATFORM_WIN32_H
 
 #include <Engine/Platform/Platform.h>
 
-class PlatformAndroid : public Platform {
+class PlatformWin32 : public Platform {
 private:
 
 public:
-
-    PlatformAndroid();
-    ~PlatformAndroid();
+  PlatformWin32();
+  ~PlatformWin32();
 };
 
 
-#endif //OGLES_PLATFORM_ANDROID_H
+#endif //OGLES_PLATFORM_WIN32_H

@@ -1,29 +1,15 @@
 #include "pngLoader.h"
 #include <string>
 #include <png.h>
-#include "Engine/Implement.h"
+#include "Engine/Engine.h"
 #include "Engine/Utils/Speak.h"
-#include "PlatformDefine.h"
-#if defined(AndroidStudio)
-#include <AssetNative.h>
-#endif
 
 pngLoader::pngLoader(const char * file_png)
 {
-  FILE* fp = NULL;
-#if defined (AndroidStudio)
-  fp = asset_fopen(file_png, "rb");
+  FILE* fp = MyEngine->GetPlatform()->GetFS()->GetFile(file_png, "rb");
   if (fp == NULL) {
-    Problem("Load Internal: Model Texture (.png) is not available on asset");
-  }
-#endif
-  if (fp == NULL) {
-    std::string png_src = std::string(getDataDir()) + "/" + file_png;
-    fp = fopen(png_src.c_str(), "rb");
-    if (fp == NULL) {
-      Problem("Load External: Model Texture (.png) is not available files directory");
-      return;
-    }
+    Problem("Load External: Model Texture (%s) is not available files directory", file_png);
+    return;
   }
 
   png_structp png_ptr;

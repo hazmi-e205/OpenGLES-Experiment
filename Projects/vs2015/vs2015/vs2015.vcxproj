@@ -167,7 +167,7 @@ if exist $(OutDir)\glew32.dll  (
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Sources\Engine\Implement.h" />
+    <ClInclude Include="..\..\..\Sources\Engine\Engine.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Models\Model.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Models\ModelType.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Models\ModelType1.h" />
@@ -188,13 +188,18 @@ if exist $(OutDir)\glew32.dll  (
     <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLNative.h" />
     <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLRender.h" />
     <ClInclude Include="..\..\..\Sources\Engine\OGL\OGLShader.h" />
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Platform.h" />
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Win32\FileSystem.h" />
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Win32\ImplementWin32.h" />
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Win32\PlatformWin32.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Utils\Mystic.h" />
     <ClInclude Include="..\..\..\Sources\Engine\Utils\Speak.h" />
+    <ClInclude Include="..\..\..\Sources\Implement.h" />
     <ClInclude Include="LeakChecker.h" />
     <ClInclude Include="PlatformDefine.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Sources\Engine\Implement.cpp" />
+    <ClCompile Include="..\..\..\Sources\Engine\Engine.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\Models\Model.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\Models\ModelType.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\Models\ModelType1.cpp" />
@@ -212,8 +217,13 @@ if exist $(OutDir)\glew32.dll  (
     <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLNative.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLRender.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\OGL\OGLShader.cpp" />
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Platform.cpp" />
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Win32\FileSystem.cpp" />
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Win32\ImplementWin32.cpp" />
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Win32\PlatformWin32.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\Utils\Mystic.cpp" />
     <ClCompile Include="..\..\..\Sources\Engine\Utils\Speak.cpp" />
+    <ClCompile Include="..\..\..\Sources\Implement.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

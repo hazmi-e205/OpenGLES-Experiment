@@ -9,6 +9,8 @@
 
 #if defined(AndroidStudio)
 #include <Engine/Platform/Android/FileSystem.h>
+#elif defined(VisualStudio)
+#include <Engine/Platform/Win32/FileSystem.h>
 #endif
 
 class Platform {

@@ -32,6 +32,12 @@
     <Filter Include="OGL Sources\Engine\Models\Textures\SOIL">
       <UniqueIdentifier>{edc89645-019c-484e-a2c6-3443561acbb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OGL Sources\Engine\Platform">
+      <UniqueIdentifier>{e4be8f7c-6fc4-4eeb-9b71-8d950048c9b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OGL Sources\Engine\Platform\Win32">
+      <UniqueIdentifier>{ac6585eb-7ee9-41c0-bcf3-8028345d8cf8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -42,9 +48,6 @@
     </ClInclude>
     <ClInclude Include="LeakChecker.h">
       <Filter>Win32 Sources</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Engine\Implement.h">
-      <Filter>OGL Sources\Engine</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Sources\Engine\Utils\Speak.h">
       <Filter>OGL Sources\Engine\Utils</Filter>
@@ -112,13 +115,28 @@
     <ClInclude Include="..\..\..\Sources\Engine\Models\Textures\TextureLoader.h">
       <Filter>OGL Sources\Engine\Models\Textures</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Implement.h">
+      <Filter>OGL Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Platform.h">
+      <Filter>OGL Sources\Engine\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Win32\FileSystem.h">
+      <Filter>OGL Sources\Engine\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Win32\PlatformWin32.h">
+      <Filter>OGL Sources\Engine\Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Engine.h">
+      <Filter>OGL Sources\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Sources\Engine\Platform\Win32\ImplementWin32.h">
+      <Filter>OGL Sources\Engine\Platform\Win32</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Win32 Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Engine\Implement.cpp">
-      <Filter>OGL Sources\Engine</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Engine\Utils\Mystic.cpp">
       <Filter>OGL Sources\Engine\Utils</Filter>
@@ -176,6 +194,24 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Engine\Models\Textures\SOIL\stb_image_aug.cpp">
       <Filter>OGL Sources\Engine\Models\Textures\SOIL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Implement.cpp">
+      <Filter>OGL Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Platform.cpp">
+      <Filter>OGL Sources\Engine\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Win32\FileSystem.cpp">
+      <Filter>OGL Sources\Engine\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Win32\PlatformWin32.cpp">
+      <Filter>OGL Sources\Engine\Platform\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Engine.cpp">
+      <Filter>OGL Sources\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Sources\Engine\Platform\Win32\ImplementWin32.cpp">
+      <Filter>OGL Sources\Engine\Platform\Win32</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

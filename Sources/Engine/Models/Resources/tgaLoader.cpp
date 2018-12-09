@@ -1,11 +1,7 @@
 #include "tgaLoader.h"
 #include <string>
-#include "Engine/Implement.h"
+#include "Engine/Engine.h"
 #include "Engine/Utils/Speak.h"
-#include "PlatformDefine.h"
-#if defined(AndroidStudio)
-#include <AssetNative.h>
-#endif
 
 void tgaLoader::LoadCompressedImage(char * pDest, char * pSrc, TGA_HEADER * pHeader)
 {
@@ -91,21 +87,10 @@ void tgaLoader::LoadUncompressedImage(char * pDest, char * pSrc, TGA_HEADER * pH
 
 tgaLoader::tgaLoader(const char * file_tga)
 {
-  FILE* f = NULL;
-#if defined (AndroidStudio)
-  f = asset_fopen(file_tga, "r");
+  FILE* f = MyEngine->GetPlatform()->GetFS()->GetFile(file_tga, "r");
   if (f == NULL) {
-    Problem("Load Internal: Model Texture (.tga) is not available on asset");
-  }
-#endif
-  if (f == NULL) {
-    std::string tga_src = std::string(getDataDir()) + "/" + file_tga;
-    f = fopen(tga_src.c_str(), "r");
-    if (f == NULL) {
-      Problem("Load External: %s", tga_src.c_str());
-      Problem("Load External: Model Texture (.tga) is not available files directory");
+      Problem("Load External: Model Texture (%s) is not available files directory", file_tga);
       return;
-    }
   }
 
   TGA_HEADER header;

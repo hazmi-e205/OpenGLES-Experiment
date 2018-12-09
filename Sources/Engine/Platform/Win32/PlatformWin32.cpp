@@ -3,20 +3,20 @@
 //
 
 #include <Engine/Utils/Speak.h>
-#include "PlatformAndroid.h"
+#include "PlatformWin32.h"
 
 Platform *Platform::MyPlatform;
 
-PlatformAndroid::PlatformAndroid() {
-    Problem("PlatformAndroid");
+PlatformWin32::PlatformWin32() {
+    Problem("PlatformWin32");
 }
 
-PlatformAndroid::~PlatformAndroid() {
+PlatformWin32::~PlatformWin32() {
 }
 
 Platform *Platform::Get() {
     if (!MyPlatform)
-        MyPlatform = new PlatformAndroid();
+        MyPlatform = new PlatformWin32();
 
     return MyPlatform;
 }
