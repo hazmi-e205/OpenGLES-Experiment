@@ -1,29 +1,14 @@
 #include "nfgReader.h"
 #include <string>
-#include "Implement.h"
 #include "Engine/Utils/Speak.h"
-#include "PlatformDefine.h"
-#if defined(AndroidStudio)
-#include <AssetNative.h>
-#endif
+#include "Engine/Engine.h"
 
 nfgReader::nfgReader(const char * file_nfg)
 {
-  FILE* pFile = NULL;
-#if defined (AndroidStudio)
-  pFile = asset_fopen(file_nfg, "r");
+  FILE* pFile = MyEngine->GetPlatform()->GetFS()->GetFile(file_nfg, "r");
   if (pFile == NULL) {
-    Problem("Load Internal: Model Vertices (.nfg) is not available on asset");
-  }
-#endif
-  if (pFile == NULL) {
-    std::string nfg_src = std::string(getDataDir()) + "/" + file_nfg;
-    pFile = fopen(nfg_src.c_str(), "r");
-    if (pFile == NULL) {
-      Problem("Load External: %s", nfg_src.c_str());
-      Problem("Load External: Model Vertices (.nfg) is not available files directory");
+      Problem("Load File: %s is not found", file_nfg);
       return;
-    }
   }
 
   //read Verices number

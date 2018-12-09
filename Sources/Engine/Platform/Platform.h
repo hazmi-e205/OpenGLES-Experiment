@@ -7,10 +7,17 @@
 
 #include "PlatformDefine.h"
 
-
+#if defined(AndroidStudio)
+#include <Engine/Platform/Android/FileSystem.h>
+#endif
 
 class Platform {
+protected:
+    static Platform *MyPlatform;
 
+public:
+    static Platform *Get();
+    FileSystem *GetFS();
 };
 
 

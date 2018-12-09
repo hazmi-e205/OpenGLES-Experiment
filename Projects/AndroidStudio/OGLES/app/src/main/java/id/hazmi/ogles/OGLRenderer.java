@@ -13,7 +13,6 @@ import javax.microedition.khronos.egl.EGLConfig;
 public class OGLRenderer implements GLSurfaceView.Renderer{
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        JNIBridge.native_init();
     }
 
     @Override

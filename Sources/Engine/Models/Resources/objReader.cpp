@@ -1,29 +1,17 @@
 #include "objReader.h"
 #include <string>
 #include <string.h>
+#include <Engine/Engine.h>
 #include "Implement.h"
 #include "Engine/Utils/Speak.h"
 #include "PlatformDefine.h"
-#if defined(AndroidStudio)
-#include <AssetNative.h>
-#endif
 
 objReader::objReader(const char * file_obj)
 {
-  FILE* pFile = NULL;
-#if defined (AndroidStudio)
-  pFile = asset_fopen(file_obj, "r");
+  FILE* pFile = MyEngine->GetPlatform()->GetFS()->GetFile(file_obj, "r");
   if (pFile == NULL) {
-    Problem("Load Internal: Model Vertices (.obj) is not available on asset");
-  }
-#endif
-  if (pFile == NULL) {
-    std::string obj_src = std::string(getDataDir()) + "/" + file_obj;
-    pFile = fopen(obj_src.c_str(), "r");
-    if (pFile == NULL) {
-      Problem("Load External: Model Vertices (.obj) is not available files directory");
-      return;
-    }
+    Problem("Load File: %s is not found", file_obj);
+    return;
   }
 
   //Let's read till drop

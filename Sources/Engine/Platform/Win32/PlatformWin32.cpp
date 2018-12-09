@@ -2,23 +2,21 @@
 // Created by Hazmi Amalul Arifin on 08/12/2018.
 //
 
-#include "Engine.h"
+#include <Engine/Utils/Speak.h>
+#include "PlatformAndroid.h"
 
-bool Engine::isValid() {
-    if (myEngine != nullptr)
-        return true;
+Platform *Platform::MyPlatform;
 
-    return false;
+PlatformAndroid::PlatformAndroid() {
+    Problem("PlatformAndroid");
 }
 
-Engine *Engine::Get() {
-    if (!isValid())
-        Create();
-
-    return myEngine;
+PlatformAndroid::~PlatformAndroid() {
 }
 
-void Engine::Create() {
-    if (myEngine == nullptr)
-        myEngine = new Engine();
+Platform *Platform::Get() {
+    if (!MyPlatform)
+        MyPlatform = new PlatformAndroid();
+
+    return MyPlatform;
 }

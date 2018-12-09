@@ -4,15 +4,9 @@
 
 #include "OGLNative.h"
 #include "Engine/Utils/Speak.h"
-#include "Implement.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-
-#if defined (AndroidStudio)
-#include "AssetNative.h"
-#include <jni.h>
-#endif
 
 GLuint loadShader(GLenum shaderType, const char* pSource) {
     GLuint shader = glCreateShader(shaderType);

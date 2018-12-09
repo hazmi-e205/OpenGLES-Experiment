@@ -5,19 +5,28 @@
 #ifndef OGLES_ENGINE_H
 #define OGLES_ENGINE_H
 
-#include "Engine/Platform/Platform.h"
+#include "PlatformDefine.h"
+
+#if defined(AndroidStudio)
+#include "Engine/Platform/Android/PlatformAndroid.h"
+#elif defined(VisualStudio)
+#include "Engine/Platform/Win32/PlatformWin32.h"
+#endif
 
 #define MyEngine Engine::Get()
 
 class Engine {
 private:
-    Engine *myEngine;
-    Platform *myPlatform;
+    static Engine *myEngine;
 
 public:
-    bool isValid();
-    Engine *Get();
+    static void Create();
+    static bool isValid();
+    static Engine *Get();
     Platform *GetPlatform();
+
+    Engine();
+    ~Engine();
 };
 
 

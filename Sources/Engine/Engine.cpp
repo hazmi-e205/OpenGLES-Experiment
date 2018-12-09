@@ -2,13 +2,10 @@
 // Created by Hazmi Amalul Arifin on 08/12/2018.
 //
 
+#include <Engine/Utils/Speak.h>
 #include "Engine.h"
 
-#if defined(AndroidStudio)
-#include "Engine/Platform/Android/PlatformAndroid.h"
-#elif defined(VisualStudio)
-#include "Engine/Platform/Win32/PlatformWin32.h"
-#endif
+Engine *Engine::myEngine;
 
 bool Engine::isValid() {
     if (myEngine != nullptr)
@@ -25,13 +22,20 @@ Engine *Engine::Get() {
 }
 
 Platform *Engine::GetPlatform() {
-    if (myPlatform == nullptr)
-    {
-#if defined(AndroidStudio)
-        myPlatform = new PlatformAndroid();
-#elif defined(VisualStudio)
-        myPlatform = new PlatformWin32();
-#endif
-    }
-    return myPlatform;
+    return Platform::Get();
+}
+
+Engine::Engine() {
+    if (GetPlatform() == nullptr)
+        Problem("Platform not yet initialized");
+
+}
+
+Engine::~Engine() {
+    delete myEngine;
+}
+
+void Engine::Create() {
+    if (!isValid())
+        myEngine = new Engine();
 }

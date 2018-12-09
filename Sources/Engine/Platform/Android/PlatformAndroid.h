@@ -10,8 +10,8 @@
 class PlatformAndroid : public Platform {
 private:
 
-
 public:
+
     PlatformAndroid();
     ~PlatformAndroid();
 };
