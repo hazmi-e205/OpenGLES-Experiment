@@ -32,10 +32,15 @@ Engine::Engine() {
 }
 
 Engine::~Engine() {
-    delete myEngine;
 }
 
 void Engine::Create() {
     if (!isValid())
         myEngine = new Engine();
+}
+
+void Engine::Shutdown()
+{
+  Platform::Shutdown();
+  delete myEngine;
 }

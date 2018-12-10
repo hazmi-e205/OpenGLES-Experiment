@@ -47,6 +47,7 @@ void native_gl_draw()
 void native_cleanup()
 {
   cleanup();
+  Engine::Shutdown();
 }
 
 void getScreen(int &width, int &height)

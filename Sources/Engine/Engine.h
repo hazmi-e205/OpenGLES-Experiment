@@ -21,6 +21,7 @@ private:
 
 public:
     static void Create();
+    static void Shutdown();
     static bool isValid();
     static Engine *Get();
     Platform *GetPlatform();

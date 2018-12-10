@@ -7,5 +7,11 @@
 
 FileSystem *Platform::GetFS() {
     Problem("Platform::GetFS");
-    return FileSystem::Get();;
+    return FileSystem::Get();
+}
+
+void Platform::Shutdown()
+{
+  FileSystem::Shutdown();
+  delete MyPlatform;
 }

@@ -15,6 +15,7 @@ private:
 
 public:
     static FileSystem *Get();
+    static void Shutdown();
     void SetAppDirectory(const char* appDir);
     const char* GetAppDirectory();
     FILE* GetFile(const char* Filename, const char* mode);

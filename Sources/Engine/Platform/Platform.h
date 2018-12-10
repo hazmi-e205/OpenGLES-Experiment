@@ -19,6 +19,7 @@ protected:
 
 public:
     static Platform *Get();
+    static void Shutdown();
     FileSystem *GetFS();
 };
 

@@ -46,3 +46,8 @@ FileSystem *FileSystem::Get() {
     Problem("FileSystem::Get() Ok!");
     return MyFS;
 }
+
+void FileSystem::Shutdown()
+{
+  delete MyFS;
+}
