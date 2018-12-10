@@ -22,6 +22,7 @@ private:
 
 public:
     static FileSystem *Get();
+    static void Shutdown();
     void SetAppDirectory(const char* appDir);
     const char* GetAppDirectory();
     void setAssetManager (AAssetManager* assetPtr);
