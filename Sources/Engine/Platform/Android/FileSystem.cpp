@@ -87,7 +87,7 @@ FileSystem *FileSystem::Get() {
     return MyFS;
 }
 
-void FileSystem::Shutdown()
+void FileSystem::Destroy()
 {
   delete MyFS;
 }
