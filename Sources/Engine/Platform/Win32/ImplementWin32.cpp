@@ -6,5 +6,5 @@
 
 void setDataDir (const char* datadir)
 {
-    MyEngine->GetPlatform()->GetFS()->SetAppDirectory(datadir);
+    MyEngine->GetFS()->SetAppDirectory(datadir);
 }

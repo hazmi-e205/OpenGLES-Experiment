@@ -11,25 +11,16 @@ int w_screen, h_screen;
 
 void native_init()
 {
-    while (!Engine::isValid())
+    if (Engine::Get())
     {
-        Engine::Create();
-    }
-    Say("Engine Init !");
+      Say("Engine Init !");
 
-    auto a1 = MyEngine->GetPlatform();
-    while (!a1)
-    {
-        //Engine::Create();
-    }
-    Say("Platform Init !");
+      if (Engine::Get()->GetPlatform())
+        Say("Platform Init !");
 
-    auto a2 = a1->GetFS();
-    while (!a2)
-    {
-        //Engine::Create();
+      if (Engine::Get()->GetFS())
+        Say("FileSystem Init !");
     }
-    Say("FS Init !");
 }
 
 void native_gl_init(int width, int height)

@@ -87,7 +87,7 @@ void tgaLoader::LoadUncompressedImage(char * pDest, char * pSrc, TGA_HEADER * pH
 
 tgaLoader::tgaLoader(const char * file_tga)
 {
-  FILE* f = MyEngine->GetPlatform()->GetFS()->GetFile(file_tga, "r");
+  FILE* f = MyEngine->GetFS()->GetFile(file_tga, "r");
   if (f == NULL) {
       Problem("Load External: Model Texture (%s) is not available files directory", file_tga);
       return;

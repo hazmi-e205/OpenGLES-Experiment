@@ -5,15 +5,16 @@
 #ifndef OGLES_PLATFORM_WIN32_H
 #define OGLES_PLATFORM_WIN32_H
 
-#include <Engine/Platform/Platform.h>
-
-class PlatformWin32 : public Platform {
+class Platform {
 private:
+  static Platform *MyPlatform;
 
 public:
-  PlatformWin32();
-  ~PlatformWin32();
-};
+  static Platform *Get();
+  static void Destroy();
 
+  Platform();
+  ~Platform();
+};
 
 #endif //OGLES_PLATFORM_WIN32_H

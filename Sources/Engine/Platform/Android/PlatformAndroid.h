@@ -5,16 +5,16 @@
 #ifndef OGLES_PLATFORM_ANDROID_H
 #define OGLES_PLATFORM_ANDROID_H
 
-#include <Engine/Platform/Platform.h>
-
-class PlatformAndroid : public Platform {
+class Platform {
 private:
+  static Platform *MyPlatform;
 
 public:
+  static Platform *Get();
+  static void Destroy();
 
-    PlatformAndroid();
-    ~PlatformAndroid();
+  Platform();
+  ~Platform();
 };
-
 
 #endif //OGLES_PLATFORM_ANDROID_H

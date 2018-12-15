@@ -7,16 +7,21 @@
 
 Platform *Platform::MyPlatform;
 
-PlatformAndroid::PlatformAndroid() {
-    Problem("PlatformAndroid");
+Platform::Platform() {
+    Speak("PlatformAndroid");
 }
 
-PlatformAndroid::~PlatformAndroid() {
+Platform::~Platform() {
 }
 
 Platform *Platform::Get() {
     if (!MyPlatform)
-        MyPlatform = new PlatformAndroid();
+        MyPlatform = new Platform();
 
     return MyPlatform;
+}
+
+void Platform::Destroy()
+{
+  delete MyPlatform;
 }

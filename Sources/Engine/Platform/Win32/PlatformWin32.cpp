@@ -7,16 +7,21 @@
 
 Platform *Platform::MyPlatform;
 
-PlatformWin32::PlatformWin32() {
-    Problem("PlatformWin32");
+Platform::Platform() {
+    Speak("PlatformWin32");
 }
 
-PlatformWin32::~PlatformWin32() {
+Platform::~Platform() {
 }
 
 Platform *Platform::Get() {
     if (!MyPlatform)
-        MyPlatform = new PlatformWin32();
+      MyPlatform = new Platform();
 
     return MyPlatform;
+}
+
+void Platform::Destroy()
+{
+  delete MyPlatform;
 }

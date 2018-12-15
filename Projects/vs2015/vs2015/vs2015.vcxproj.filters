@@ -38,6 +38,9 @@
     <Filter Include="OGL Sources\Engine\Platform\Win32">
       <UniqueIdentifier>{ac6585eb-7ee9-41c0-bcf3-8028345d8cf8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OGL Sources\Engine\ControlBox">
+      <UniqueIdentifier>{36d0f1ba-35d5-4551-a5e4-d08b0443c0db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -118,9 +121,6 @@
     <ClInclude Include="..\..\..\Sources\Implement.h">
       <Filter>OGL Sources</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Sources\Engine\Platform\Platform.h">
-      <Filter>OGL Sources\Engine\Platform</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Sources\Engine\Platform\Win32\FileSystem.h">
       <Filter>OGL Sources\Engine\Platform\Win32</Filter>
     </ClInclude>
@@ -197,9 +197,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Implement.cpp">
       <Filter>OGL Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Sources\Engine\Platform\Platform.cpp">
-      <Filter>OGL Sources\Engine\Platform</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Sources\Engine\Platform\Win32\FileSystem.cpp">
       <Filter>OGL Sources\Engine\Platform\Win32</Filter>

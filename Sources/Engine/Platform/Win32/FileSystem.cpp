@@ -39,15 +39,14 @@ FileSystem::~FileSystem() {
 }
 
 FileSystem *FileSystem::Get() {
-    Problem("FileSystem::Get()");
-    while (!MyFS) {
-        MyFS = new FileSystem();
-    }
-    Problem("FileSystem::Get() Ok!");
-    return MyFS;
+  if (!MyFS) {
+    MyFS = new FileSystem();
+  }
+  
+  return MyFS;
 }
 
-void FileSystem::Shutdown()
+void FileSystem::Destroy()
 {
   delete MyFS;
 }

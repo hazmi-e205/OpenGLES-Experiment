@@ -20,7 +20,6 @@ add_library( # Sets the name of the library.
              src/main/cpp/JNIBridge.cpp
              ../../../../Sources/Implement.cpp
              ../../../../Sources/Engine/Engine.cpp
-             ../../../../Sources/Engine/Platform/Platform.cpp
              ../../../../Sources/Engine/Platform/Android/FileSystem.cpp
              ../../../../Sources/Engine/Platform/Android/Implement.cpp
              ../../../../Sources/Engine/Platform/Android/PlatformAndroid.cpp

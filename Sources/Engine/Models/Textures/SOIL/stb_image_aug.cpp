@@ -179,7 +179,7 @@ static stbi_uc *hdr_to_ldr(float   *data, int x, int y, int comp);
 #ifndef STBI_NO_STDIO
 unsigned char *stbi_load(char const *filename, int *x, int *y, int *comp, int req_comp)
 {
-   FILE *f = MyEngine->GetPlatform()->GetFS()->GetFile(filename, "rb");
+   FILE *f = MyEngine->GetFS()->GetFile(filename, "rb");
    if (f == nullptr) {
       Problem("Load External: Model Texture (%s) is not available files directory", filename);
       return epuc("can't fopen", "Unable to open file");

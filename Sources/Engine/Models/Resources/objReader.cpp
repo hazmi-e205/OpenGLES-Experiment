@@ -8,7 +8,7 @@
 
 objReader::objReader(const char * file_obj)
 {
-  FILE* pFile = MyEngine->GetPlatform()->GetFS()->GetFile(file_obj, "r");
+  FILE* pFile = MyEngine->GetFS()->GetFile(file_obj, "r");
   if (pFile == NULL) {
     Problem("Load File: %s is not found", file_obj);
     return;

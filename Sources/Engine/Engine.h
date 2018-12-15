@@ -9,8 +9,10 @@
 
 #if defined(AndroidStudio)
 #include "Engine/Platform/Android/PlatformAndroid.h"
+#include "Engine/Platform/Android/FileSystem.h"
 #elif defined(VisualStudio)
 #include "Engine/Platform/Win32/PlatformWin32.h"
+#include "Engine/Platform/Win32/FileSystem.h"
 #endif
 
 #define MyEngine Engine::Get()
@@ -24,7 +26,9 @@ public:
     static void Shutdown();
     static bool isValid();
     static Engine *Get();
+
     Platform *GetPlatform();
+    FileSystem *GetFS();
 
     Engine();
     ~Engine();

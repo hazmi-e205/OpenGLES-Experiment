@@ -6,10 +6,10 @@
 
 void setDataDir (const char* datadir)
 {
-    MyEngine->GetPlatform()->GetFS()->SetAppDirectory(datadir);
+    MyEngine->GetFS()->SetAppDirectory(datadir);
 }
 
 void setAssetMgr (AAssetManager* assetPtr)
 {
-    MyEngine->GetPlatform()->GetFS()->setAssetManager(assetPtr);
+    MyEngine->GetFS()->setAssetManager(assetPtr);
 }

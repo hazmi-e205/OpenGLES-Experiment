@@ -6,7 +6,7 @@
 
 pngLoader::pngLoader(const char * file_png)
 {
-  FILE* fp = MyEngine->GetPlatform()->GetFS()->GetFile(file_png, "rb");
+  FILE* fp = MyEngine->GetFS()->GetFile(file_png, "rb");
   if (fp == NULL) {
     Problem("Load External: Model Texture (%s) is not available files directory", file_png);
     return;

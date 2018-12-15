@@ -25,6 +25,11 @@ Platform *Engine::GetPlatform() {
     return Platform::Get();
 }
 
+FileSystem *Engine::GetFS()
+{
+  return FileSystem::Get();
+}
+
 Engine::Engine() {
     if (GetPlatform() == nullptr)
         Problem("Platform not yet initialized");
@@ -41,6 +46,7 @@ void Engine::Create() {
 
 void Engine::Shutdown()
 {
-  Platform::Shutdown();
+  Platform::Destroy();
+  FileSystem::Destroy();
   delete myEngine;
 }
